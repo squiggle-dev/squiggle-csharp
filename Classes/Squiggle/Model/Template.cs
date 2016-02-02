@@ -86,11 +86,11 @@ namespace Squiggle.Model {
 
     
     /// <summary>
-    /// Gets or Sets Template
+    /// Gets or Sets GlobalTemplate
     /// </summary>
-    [DataMember(Name="template", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "template")]
-    public int? Template { get; set; }
+    [DataMember(Name="global_template", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "global_template")]
+    public int? GlobalTemplate { get; set; }
 
     
 
@@ -120,7 +120,7 @@ namespace Squiggle.Model {
       
       sb.Append("  User: ").Append(User).Append("\n");
       
-      sb.Append("  Template: ").Append(Template).Append("\n");
+      sb.Append("  GlobalTemplate: ").Append(GlobalTemplate).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();
