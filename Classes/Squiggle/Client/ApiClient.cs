@@ -116,7 +116,7 @@ namespace Squiggle.Client
         /// <returns>Escaped string.</returns>
         public string EscapeString(string str)
         {
-            return RestSharp.Contrib.HttpUtility.UrlEncode(str);
+            return RestSharp.Extensions.StringExtensions.UrlEncode(str);
         }
     
         /// <summary>
