@@ -269,6 +269,24 @@ namespace Squiggle.Client
                 }
             }
         }
+
+        /// <summary>
+        /// Select the Accept header's value from the given accepts array:
+        /// if JSON exists in the given array, use it;
+        /// otherwise use all of them (joining into a string)
+        /// </summary>
+        /// <param name="accepts">The accepts array to select from.</param>
+        /// <returns>The Accept header to use.</returns>
+        public String SelectHeaderAccept(String[] accepts)
+        {
+            if (accepts.Length == 0)
+                return null;
+
+            if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
+                return "application/json";
+
+            return String.Join(",", accepts);
+        }
  
         /// <summary>
         /// Encode string in base64 format.
