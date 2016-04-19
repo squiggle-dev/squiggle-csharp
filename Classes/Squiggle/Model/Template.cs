@@ -22,6 +22,22 @@ namespace Squiggle.Model {
 
     
     /// <summary>
+    /// Gets or Sets User
+    /// </summary>
+    [DataMember(Name="user", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "user")]
+    public int? User { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets GlobalTemplate
+    /// </summary>
+    [DataMember(Name="global_template", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "global_template")]
+    public int? GlobalTemplate { get; set; }
+
+    
+    /// <summary>
     /// Gets or Sets Name
     /// </summary>
     [DataMember(Name="name", EmitDefaultValue=false)]
@@ -35,14 +51,6 @@ namespace Squiggle.Model {
     [DataMember(Name="description", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "description")]
     public string Description { get; set; }
-
-    
-    /// <summary>
-    /// Gets or Sets Thumbnail
-    /// </summary>
-    [DataMember(Name="thumbnail", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "thumbnail")]
-    public string Thumbnail { get; set; }
 
     
     /// <summary>
@@ -62,11 +70,11 @@ namespace Squiggle.Model {
 
     
     /// <summary>
-    /// Gets or Sets ContentRichtext
+    /// Gets or Sets Thumbnail
     /// </summary>
-    [DataMember(Name="content_richtext", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "content_richtext")]
-    public string ContentRichtext { get; set; }
+    [DataMember(Name="thumbnail", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "thumbnail")]
+    public int? Thumbnail { get; set; }
 
     
     /// <summary>
@@ -78,19 +86,19 @@ namespace Squiggle.Model {
 
     
     /// <summary>
-    /// Gets or Sets User
+    /// Gets or Sets CreatedAt
     /// </summary>
-    [DataMember(Name="user", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "user")]
-    public int? User { get; set; }
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "created_at")]
+    public DateTime? CreatedAt { get; set; }
 
     
     /// <summary>
-    /// Gets or Sets GlobalTemplate
+    /// Gets or Sets UpdatedAt
     /// </summary>
-    [DataMember(Name="global_template", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "global_template")]
-    public int? GlobalTemplate { get; set; }
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "updated_at")]
+    public DateTime? UpdatedAt { get; set; }
 
     
 
@@ -104,23 +112,25 @@ namespace Squiggle.Model {
       
       sb.Append("  Id: ").Append(Id).Append("\n");
       
+      sb.Append("  User: ").Append(User).Append("\n");
+      
+      sb.Append("  GlobalTemplate: ").Append(GlobalTemplate).Append("\n");
+      
       sb.Append("  Name: ").Append(Name).Append("\n");
       
       sb.Append("  Description: ").Append(Description).Append("\n");
-      
-      sb.Append("  Thumbnail: ").Append(Thumbnail).Append("\n");
       
       sb.Append("  ContentHtml: ").Append(ContentHtml).Append("\n");
       
       sb.Append("  ContentPlaintext: ").Append(ContentPlaintext).Append("\n");
       
-      sb.Append("  ContentRichtext: ").Append(ContentRichtext).Append("\n");
+      sb.Append("  Thumbnail: ").Append(Thumbnail).Append("\n");
       
       sb.Append("  Settings: ").Append(Settings).Append("\n");
       
-      sb.Append("  User: ").Append(User).Append("\n");
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       
-      sb.Append("  GlobalTemplate: ").Append(GlobalTemplate).Append("\n");
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

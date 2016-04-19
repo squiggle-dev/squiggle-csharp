@@ -22,14 +22,6 @@ namespace Squiggle.Model {
 
     
     /// <summary>
-    /// Gets or Sets Address
-    /// </summary>
-    [DataMember(Name="address", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "address")]
-    public int? Address { get; set; }
-
-    
-    /// <summary>
     /// Gets or Sets Template
     /// </summary>
     [DataMember(Name="template", EmitDefaultValue=false)]
@@ -43,14 +35,6 @@ namespace Squiggle.Model {
     [DataMember(Name="plain", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "plain")]
     public string Plain { get; set; }
-
-    
-    /// <summary>
-    /// Gets or Sets Rich
-    /// </summary>
-    [DataMember(Name="rich", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "rich")]
-    public string Rich { get; set; }
 
     
     /// <summary>
@@ -72,13 +56,9 @@ namespace Squiggle.Model {
       
       sb.Append("  Id: ").Append(Id).Append("\n");
       
-      sb.Append("  Address: ").Append(Address).Append("\n");
-      
       sb.Append("  Template: ").Append(Template).Append("\n");
       
       sb.Append("  Plain: ").Append(Plain).Append("\n");
-      
-      sb.Append("  Rich: ").Append(Rich).Append("\n");
       
       sb.Append("  Html: ").Append(Html).Append("\n");
       

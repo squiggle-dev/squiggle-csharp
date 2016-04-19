@@ -42,7 +42,7 @@ namespace Squiggle.Model {
     /// </summary>
     [DataMember(Name="thumbnail", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "thumbnail")]
-    public string Thumbnail { get; set; }
+    public int? Thumbnail { get; set; }
 
     
     /// <summary>
@@ -62,19 +62,27 @@ namespace Squiggle.Model {
 
     
     /// <summary>
-    /// Gets or Sets ContentRichtext
-    /// </summary>
-    [DataMember(Name="content_richtext", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "content_richtext")]
-    public string ContentRichtext { get; set; }
-
-    
-    /// <summary>
     /// Gets or Sets Settings
     /// </summary>
     [DataMember(Name="settings", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "settings")]
     public string Settings { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets CreatedAt
+    /// </summary>
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "created_at")]
+    public DateTime? CreatedAt { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets UpdatedAt
+    /// </summary>
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "updated_at")]
+    public DateTime? UpdatedAt { get; set; }
 
     
 
@@ -98,9 +106,11 @@ namespace Squiggle.Model {
       
       sb.Append("  ContentPlaintext: ").Append(ContentPlaintext).Append("\n");
       
-      sb.Append("  ContentRichtext: ").Append(ContentRichtext).Append("\n");
-      
       sb.Append("  Settings: ").Append(Settings).Append("\n");
+      
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

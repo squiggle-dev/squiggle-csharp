@@ -166,11 +166,35 @@ namespace Squiggle.Model {
 
     
     /// <summary>
+    /// Gets or Sets Logo
+    /// </summary>
+    [DataMember(Name="logo", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "logo")]
+    public int? Logo { get; set; }
+
+    
+    /// <summary>
     /// Gets or Sets Snippet
     /// </summary>
     [DataMember(Name="snippet", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "snippet")]
     public int? Snippet { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets CreatedAt
+    /// </summary>
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "created_at")]
+    public DateTime? CreatedAt { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets UpdatedAt
+    /// </summary>
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "updated_at")]
+    public DateTime? UpdatedAt { get; set; }
 
     
 
@@ -220,7 +244,13 @@ namespace Squiggle.Model {
       
       sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
       
+      sb.Append("  Logo: ").Append(Logo).Append("\n");
+      
       sb.Append("  Snippet: ").Append(Snippet).Append("\n");
+      
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

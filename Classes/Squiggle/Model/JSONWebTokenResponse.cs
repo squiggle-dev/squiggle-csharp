@@ -11,7 +11,7 @@ namespace Squiggle.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class JSONWebTokenResponse : Response {
+  public class JSONWebTokenResponse {
     
     /// <summary>
     /// Gets or Sets Data
@@ -19,14 +19,6 @@ namespace Squiggle.Model {
     [DataMember(Name="data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "data")]
     public JSONWebToken Data { get; set; }
-
-    
-    /// <summary>
-    /// Gets or Sets Links
-    /// </summary>
-    [DataMember(Name="links", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "links")]
-    public ResponseLinks Links { get; set; }
 
     
 
@@ -40,8 +32,6 @@ namespace Squiggle.Model {
       
       sb.Append("  Data: ").Append(Data).Append("\n");
       
-      sb.Append("  Links: ").Append(Links).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }
@@ -50,7 +40,7 @@ namespace Squiggle.Model {
     /// Get the JSON string presentation of the object
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
-    public  new string ToJson() {
+    public string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
 

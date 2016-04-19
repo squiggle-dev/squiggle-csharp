@@ -45,6 +45,22 @@ namespace Squiggle.Model {
     public int? Size { get; set; }
 
     
+    /// <summary>
+    /// Gets or Sets CreatedAt
+    /// </summary>
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "created_at")]
+    public DateTime? CreatedAt { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets UpdatedAt
+    /// </summary>
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "updated_at")]
+    public DateTime? UpdatedAt { get; set; }
+
+    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -61,6 +77,10 @@ namespace Squiggle.Model {
       sb.Append("  Src: ").Append(Src).Append("\n");
       
       sb.Append("  Size: ").Append(Size).Append("\n");
+      
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();
