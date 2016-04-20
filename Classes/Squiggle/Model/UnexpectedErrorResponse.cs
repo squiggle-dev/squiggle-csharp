@@ -14,11 +14,27 @@ namespace Squiggle.Model {
   public class UnexpectedErrorResponse {
     
     /// <summary>
+    /// Gets or Sets Code
+    /// </summary>
+    [DataMember(Name="code", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "code")]
+    public int? Code { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets Message
+    /// </summary>
+    [DataMember(Name="message", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "message")]
+    public string Message { get; set; }
+
+    
+    /// <summary>
     /// Gets or Sets Errors
     /// </summary>
     [DataMember(Name="errors", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "errors")]
-    public List<Error> Errors { get; set; }
+    public Dictionary<String, string> Errors { get; set; }
 
     
 
@@ -29,6 +45,10 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class UnexpectedErrorResponse {\n");
+      
+      sb.Append("  Code: ").Append(Code).Append("\n");
+      
+      sb.Append("  Message: ").Append(Message).Append("\n");
       
       sb.Append("  Errors: ").Append(Errors).Append("\n");
       

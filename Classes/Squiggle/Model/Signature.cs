@@ -45,6 +45,14 @@ namespace Squiggle.Model {
     public string Html { get; set; }
 
     
+    /// <summary>
+    /// Gets or Sets Errors
+    /// </summary>
+    [DataMember(Name="errors", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "errors")]
+    public Dictionary<String, string> Errors { get; set; }
+
+    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -61,6 +69,8 @@ namespace Squiggle.Model {
       sb.Append("  Plain: ").Append(Plain).Append("\n");
       
       sb.Append("  Html: ").Append(Html).Append("\n");
+      
+      sb.Append("  Errors: ").Append(Errors).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();
