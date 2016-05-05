@@ -17,7 +17,7 @@ namespace Squiggle.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "0.1.4";
+        public const string Version = "0.1.5";
   
         /// <summary>
         /// Gets or sets the default API client for making HTTP calls.
@@ -124,7 +124,7 @@ namespace Squiggle.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
             report += "    Version of the API: 0.0.1\n";
-            report += "    SDK Package Version: 0.1.4\n";
+            report += "    SDK Package Version: 0.1.5\n";
   
             return report;
         }
