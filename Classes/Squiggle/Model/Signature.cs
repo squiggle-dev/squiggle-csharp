@@ -22,6 +22,14 @@ namespace Squiggle.Model {
 
     
     /// <summary>
+    /// Gets or Sets Label
+    /// </summary>
+    [DataMember(Name="label", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "label")]
+    public string Label { get; set; }
+
+    
+    /// <summary>
     /// Gets or Sets Template
     /// </summary>
     [DataMember(Name="template", EmitDefaultValue=false)]
@@ -63,6 +71,8 @@ namespace Squiggle.Model {
       sb.Append("class Signature {\n");
       
       sb.Append("  Id: ").Append(Id).Append("\n");
+      
+      sb.Append("  Label: ").Append(Label).Append("\n");
       
       sb.Append("  Template: ").Append(Template).Append("\n");
       
