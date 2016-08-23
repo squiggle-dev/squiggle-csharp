@@ -182,6 +182,22 @@ namespace Squiggle.Model {
 
     
     /// <summary>
+    /// Gets or Sets SecretKey
+    /// </summary>
+    [DataMember(Name="secret_key", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "secret_key")]
+    public string SecretKey { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets AccessToken
+    /// </summary>
+    [DataMember(Name="access_token", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "access_token")]
+    public string AccessToken { get; set; }
+
+    
+    /// <summary>
     /// Gets or Sets CreatedAt
     /// </summary>
     [DataMember(Name="created_at", EmitDefaultValue=false)]
@@ -247,6 +263,10 @@ namespace Squiggle.Model {
       sb.Append("  Logo: ").Append(Logo).Append("\n");
       
       sb.Append("  Snippet: ").Append(Snippet).Append("\n");
+      
+      sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
+      
+      sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
       
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       
