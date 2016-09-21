@@ -63,8 +63,9 @@ namespace Squiggle
         ///  Upload a new file
         /// </summary>
         /// <param name="file"></param>
+        /// <param name="name"></param>
         /// <returns>FileResponseSingle</returns>
-        FileResponseSingle AddFile (Stream file);
+        FileResponseSingle AddFile (Stream file, string name);
         
         /// <summary>
         ///  Gets a file with the specified ID
@@ -84,9 +85,10 @@ namespace Squiggle
         ///  Updates an existing file with the specified ID
         /// </summary>
         /// <param name="id">ID of file to update</param>
-        /// <param name="data"></param>
+        /// <param name="file"></param>
+        /// <param name="name"></param>
         /// <returns>FileResponseSingle</returns>
-        FileResponseSingle EditFile (long? id, FileObject data);
+        FileResponseSingle EditFile (long? id, Stream file, string name);
         
         /// <summary>
         ///  Gets global templates
@@ -619,8 +621,9 @@ namespace Squiggle
         ///  Upload a new file
         /// </summary>
         /// <param name="file"></param> 
+        /// <param name="name"></param> 
         /// <returns>FileResponseSingle</returns>            
-        public FileResponseSingle AddFile (Stream file)
+        public FileResponseSingle AddFile (Stream file, string name)
         {
             
             // verify the required parameter 'file' is set
@@ -648,6 +651,7 @@ namespace Squiggle
             
             
             if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
+            if (name != null) formParams.Add("name", ApiClient.ParameterToString(name)); // form parameter
             
             
     
@@ -772,16 +776,14 @@ namespace Squiggle
         ///  Updates an existing file with the specified ID
         /// </summary>
         /// <param name="id">ID of file to update</param> 
-        /// <param name="data"></param> 
+        /// <param name="file"></param> 
+        /// <param name="name"></param> 
         /// <returns>FileResponseSingle</returns>            
-        public FileResponseSingle EditFile (long? id, FileObject data)
+        public FileResponseSingle EditFile (long? id, Stream file, string name)
         {
             
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling EditFile");
-            
-            // verify the required parameter 'data' is set
-            if (data == null) throw new ApiException(400, "Missing required parameter 'data' when calling EditFile");
             
     
             var path = "/files/{id}";
@@ -805,8 +807,9 @@ namespace Squiggle
     
             
             
+            if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
+            if (name != null) formParams.Add("name", ApiClient.ParameterToString(name)); // form parameter
             
-            postBody = ApiClient.Serialize(data); // http body (model) parameter
             
     
             // authentication setting, if any
