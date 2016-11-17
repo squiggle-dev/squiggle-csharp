@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class Snippet {
-    
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "id")]
     public int? Id { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets User
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "user")]
     public int? User { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets ContentHtml
     /// </summary>
@@ -36,7 +33,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "content_html")]
     public string ContentHtml { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets ContentPlaintext
     /// </summary>
@@ -44,7 +40,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "content_plaintext")]
     public string ContentPlaintext { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Image
     /// </summary>
@@ -52,7 +47,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "image")]
     public int? Image { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets CreatedAt
     /// </summary>
@@ -60,7 +54,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "created_at")]
     public DateTime? CreatedAt { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets UpdatedAt
     /// </summary>
@@ -68,7 +61,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "updated_at")]
     public DateTime? UpdatedAt { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -77,21 +69,13 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class Snippet {\n");
-      
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
       sb.Append("  User: ").Append(User).Append("\n");
-      
       sb.Append("  ContentHtml: ").Append(ContentHtml).Append("\n");
-      
       sb.Append("  ContentPlaintext: ").Append(ContentPlaintext).Append("\n");
-      
       sb.Append("  Image: ").Append(Image).Append("\n");
-      
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-      
       sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

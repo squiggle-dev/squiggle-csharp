@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class ResponseLinks {
-    
     /// <summary>
     /// Gets or Sets Self
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "self")]
     public string Self { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Related
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "related")]
     public string Related { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Next
     /// </summary>
@@ -36,7 +33,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "next")]
     public string Next { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Last
     /// </summary>
@@ -44,7 +40,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "last")]
     public string Last { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -53,15 +48,10 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class ResponseLinks {\n");
-      
       sb.Append("  Self: ").Append(Self).Append("\n");
-      
       sb.Append("  Related: ").Append(Related).Append("\n");
-      
       sb.Append("  Next: ").Append(Next).Append("\n");
-      
       sb.Append("  Last: ").Append(Last).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

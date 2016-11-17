@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class JSONWebToken {
-    
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "id")]
     public int? Id { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Token
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "token")]
     public string Token { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -37,11 +34,8 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class JSONWebToken {\n");
-      
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
       sb.Append("  Token: ").Append(Token).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

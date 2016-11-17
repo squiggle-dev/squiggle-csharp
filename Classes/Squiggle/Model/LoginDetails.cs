@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class LoginDetails {
-    
     /// <summary>
     /// Gets or Sets Username
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "username")]
     public string Username { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Password
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "password")]
     public string Password { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -37,11 +34,8 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class LoginDetails {\n");
-      
       sb.Append("  Username: ").Append(Username).Append("\n");
-      
       sb.Append("  Password: ").Append(Password).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

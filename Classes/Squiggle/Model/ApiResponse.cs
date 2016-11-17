@@ -11,8 +11,7 @@ namespace Squiggle.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Response {
-    
+  public class ApiResponse {
     /// <summary>
     /// Gets or Sets Links
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "links")]
     public ResponseLinks Links { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -28,10 +26,8 @@ namespace Squiggle.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Response {\n");
-      
+      sb.Append("class ApiResponse {\n");
       sb.Append("  Links: ").Append(Links).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

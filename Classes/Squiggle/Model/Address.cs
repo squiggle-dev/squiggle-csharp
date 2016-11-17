@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class Address {
-    
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "id")]
     public int? Id { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Email
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "email")]
     public string Email { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Password
     /// </summary>
@@ -36,7 +33,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "password")]
     public string Password { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets FirstName
     /// </summary>
@@ -44,7 +40,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "first_name")]
     public string FirstName { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets LastName
     /// </summary>
@@ -52,7 +47,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "last_name")]
     public string LastName { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets JobTitle
     /// </summary>
@@ -60,7 +54,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "job_title")]
     public string JobTitle { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets TelMobile
     /// </summary>
@@ -68,7 +61,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "tel_mobile")]
     public string TelMobile { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets TelDirect
     /// </summary>
@@ -76,7 +68,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "tel_direct")]
     public string TelDirect { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Linkedin
     /// </summary>
@@ -84,7 +75,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "linkedin")]
     public string Linkedin { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Facebook
     /// </summary>
@@ -92,7 +82,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "facebook")]
     public string Facebook { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Twitter
     /// </summary>
@@ -100,7 +89,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "twitter")]
     public string Twitter { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Instagram
     /// </summary>
@@ -108,7 +96,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "instagram")]
     public string Instagram { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Googleplus
     /// </summary>
@@ -116,7 +103,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "googleplus")]
     public string Googleplus { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Signatures
     /// </summary>
@@ -124,7 +110,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "signatures")]
     public List<Signature> Signatures { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets User
     /// </summary>
@@ -132,7 +117,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "user")]
     public int? User { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets CreatedAt
     /// </summary>
@@ -140,7 +124,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "created_at")]
     public DateTime? CreatedAt { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets UpdatedAt
     /// </summary>
@@ -148,7 +131,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "updated_at")]
     public DateTime? UpdatedAt { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -157,41 +139,23 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class Address {\n");
-      
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
       sb.Append("  Email: ").Append(Email).Append("\n");
-      
       sb.Append("  Password: ").Append(Password).Append("\n");
-      
       sb.Append("  FirstName: ").Append(FirstName).Append("\n");
-      
       sb.Append("  LastName: ").Append(LastName).Append("\n");
-      
       sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
-      
       sb.Append("  TelMobile: ").Append(TelMobile).Append("\n");
-      
       sb.Append("  TelDirect: ").Append(TelDirect).Append("\n");
-      
       sb.Append("  Linkedin: ").Append(Linkedin).Append("\n");
-      
       sb.Append("  Facebook: ").Append(Facebook).Append("\n");
-      
       sb.Append("  Twitter: ").Append(Twitter).Append("\n");
-      
       sb.Append("  Instagram: ").Append(Instagram).Append("\n");
-      
       sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
-      
       sb.Append("  Signatures: ").Append(Signatures).Append("\n");
-      
       sb.Append("  User: ").Append(User).Append("\n");
-      
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-      
       sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class Signature {
-    
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "id")]
     public int? Id { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Label
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "label")]
     public string Label { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Template
     /// </summary>
@@ -36,7 +33,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "template")]
     public int? Template { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Plain
     /// </summary>
@@ -44,7 +40,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "plain")]
     public string Plain { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Html
     /// </summary>
@@ -52,7 +47,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "html")]
     public string Html { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Errors
     /// </summary>
@@ -60,7 +54,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "errors")]
     public Dictionary<String, string> Errors { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -69,19 +62,12 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class Signature {\n");
-      
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
       sb.Append("  Label: ").Append(Label).Append("\n");
-      
       sb.Append("  Template: ").Append(Template).Append("\n");
-      
       sb.Append("  Plain: ").Append(Plain).Append("\n");
-      
       sb.Append("  Html: ").Append(Html).Append("\n");
-      
       sb.Append("  Errors: ").Append(Errors).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

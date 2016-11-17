@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class User {
-    
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "id")]
     public int? Id { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Email
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "email")]
     public string Email { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets CompanyName
     /// </summary>
@@ -36,7 +33,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "company_name")]
     public string CompanyName { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets FirstName
     /// </summary>
@@ -44,7 +40,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "first_name")]
     public string FirstName { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets LastName
     /// </summary>
@@ -52,7 +47,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "last_name")]
     public string LastName { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Domain
     /// </summary>
@@ -60,7 +54,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "domain")]
     public string Domain { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Address1
     /// </summary>
@@ -68,7 +61,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "address1")]
     public string Address1 { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Address2
     /// </summary>
@@ -76,7 +68,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "address2")]
     public string Address2 { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Address3
     /// </summary>
@@ -84,7 +75,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "address3")]
     public string Address3 { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets AddressCity
     /// </summary>
@@ -92,7 +82,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "address_city")]
     public string AddressCity { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets AddressPostcode
     /// </summary>
@@ -100,7 +89,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "address_postcode")]
     public string AddressPostcode { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets AddressCountry
     /// </summary>
@@ -108,7 +96,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "address_country")]
     public string AddressCountry { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Website
     /// </summary>
@@ -116,7 +103,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "website")]
     public string Website { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Tel
     /// </summary>
@@ -124,7 +110,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "tel")]
     public string Tel { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Linkedin
     /// </summary>
@@ -132,7 +117,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "linkedin")]
     public string Linkedin { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Facebook
     /// </summary>
@@ -140,7 +124,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "facebook")]
     public string Facebook { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Twitter
     /// </summary>
@@ -148,7 +131,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "twitter")]
     public string Twitter { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Instagram
     /// </summary>
@@ -156,7 +138,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "instagram")]
     public string Instagram { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Googleplus
     /// </summary>
@@ -164,7 +145,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "googleplus")]
     public string Googleplus { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Logo
     /// </summary>
@@ -172,7 +152,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "logo")]
     public int? Logo { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Snippet
     /// </summary>
@@ -180,7 +159,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "snippet")]
     public int? Snippet { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets SecretKey
     /// </summary>
@@ -188,7 +166,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "secret_key")]
     public string SecretKey { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets AccessToken
     /// </summary>
@@ -196,7 +173,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "access_token")]
     public string AccessToken { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets CreatedAt
     /// </summary>
@@ -204,7 +180,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "created_at")]
     public DateTime? CreatedAt { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets UpdatedAt
     /// </summary>
@@ -212,7 +187,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "updated_at")]
     public DateTime? UpdatedAt { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -221,57 +195,31 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class User {\n");
-      
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
       sb.Append("  Email: ").Append(Email).Append("\n");
-      
       sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
-      
       sb.Append("  FirstName: ").Append(FirstName).Append("\n");
-      
       sb.Append("  LastName: ").Append(LastName).Append("\n");
-      
       sb.Append("  Domain: ").Append(Domain).Append("\n");
-      
       sb.Append("  Address1: ").Append(Address1).Append("\n");
-      
       sb.Append("  Address2: ").Append(Address2).Append("\n");
-      
       sb.Append("  Address3: ").Append(Address3).Append("\n");
-      
       sb.Append("  AddressCity: ").Append(AddressCity).Append("\n");
-      
       sb.Append("  AddressPostcode: ").Append(AddressPostcode).Append("\n");
-      
       sb.Append("  AddressCountry: ").Append(AddressCountry).Append("\n");
-      
       sb.Append("  Website: ").Append(Website).Append("\n");
-      
       sb.Append("  Tel: ").Append(Tel).Append("\n");
-      
       sb.Append("  Linkedin: ").Append(Linkedin).Append("\n");
-      
       sb.Append("  Facebook: ").Append(Facebook).Append("\n");
-      
       sb.Append("  Twitter: ").Append(Twitter).Append("\n");
-      
       sb.Append("  Instagram: ").Append(Instagram).Append("\n");
-      
       sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
-      
       sb.Append("  Logo: ").Append(Logo).Append("\n");
-      
       sb.Append("  Snippet: ").Append(Snippet).Append("\n");
-      
       sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
-      
       sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
-      
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-      
       sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

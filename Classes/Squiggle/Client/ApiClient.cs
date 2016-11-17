@@ -116,7 +116,7 @@ namespace Squiggle.Client
         /// <returns>Escaped string.</returns>
         public string EscapeString(string str)
         {
-            return RestSharp.Extensions.StringExtensions.UrlEncode(str);
+            return RestSharp.Contrib.HttpUtility.UrlEncode(str);
         }
     
         /// <summary>
@@ -257,35 +257,15 @@ namespace Squiggle.Client
                 // determine which one to use
                 switch(auth)
                 {
-                    
                     case "jwt":
                         headerParams["Authorization"] = GetApiKeyWithPrefix("Authorization");
                         
                         break;
-                    
                     default:
                         //TODO show warning about security definition not found
                         break;
                 }
             }
-        }
-
-        /// <summary>
-        /// Select the Accept header's value from the given accepts array:
-        /// if JSON exists in the given array, use it;
-        /// otherwise use all of them (joining into a string)
-        /// </summary>
-        /// <param name="accepts">The accepts array to select from.</param>
-        /// <returns>The Accept header to use.</returns>
-        public String SelectHeaderAccept(String[] accepts)
-        {
-            if (accepts.Length == 0)
-                return null;
-
-            if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
-                return "application/json";
-
-            return String.Join(",", accepts);
         }
  
         /// <summary>

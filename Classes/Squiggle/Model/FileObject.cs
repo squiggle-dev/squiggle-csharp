@@ -12,7 +12,6 @@ namespace Squiggle.Model {
   /// </summary>
   [DataContract]
   public class FileObject {
-    
     /// <summary>
     /// Gets or Sets Id
     /// </summary>
@@ -20,7 +19,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "id")]
     public int? Id { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Name
     /// </summary>
@@ -28,7 +26,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "name")]
     public string Name { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Src
     /// </summary>
@@ -36,7 +33,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "src")]
     public string Src { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Size
     /// </summary>
@@ -44,7 +40,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "size")]
     public int? Size { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets CreatedAt
     /// </summary>
@@ -52,7 +47,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "created_at")]
     public DateTime? CreatedAt { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets UpdatedAt
     /// </summary>
@@ -60,7 +54,6 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "updated_at")]
     public DateTime? UpdatedAt { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -69,19 +62,12 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class FileObject {\n");
-      
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
       sb.Append("  Name: ").Append(Name).Append("\n");
-      
       sb.Append("  Src: ").Append(Src).Append("\n");
-      
       sb.Append("  Size: ").Append(Size).Append("\n");
-      
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-      
       sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }

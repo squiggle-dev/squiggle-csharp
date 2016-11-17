@@ -11,16 +11,7 @@ namespace Squiggle.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class TemplateResponseMultiple : Response {
-    
-    /// <summary>
-    /// Gets or Sets Data
-    /// </summary>
-    [DataMember(Name="data", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "data")]
-    public List<Template> Data { get; set; }
-
-    
+  public class TemplateResponseMultiple {
     /// <summary>
     /// Gets or Sets Links
     /// </summary>
@@ -28,7 +19,13 @@ namespace Squiggle.Model {
     [JsonProperty(PropertyName = "links")]
     public ResponseLinks Links { get; set; }
 
-    
+    /// <summary>
+    /// Gets or Sets Data
+    /// </summary>
+    [DataMember(Name="data", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "data")]
+    public List<Template> Data { get; set; }
+
 
     /// <summary>
     /// Get the string presentation of the object
@@ -37,11 +34,8 @@ namespace Squiggle.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class TemplateResponseMultiple {\n");
-      
-      sb.Append("  Data: ").Append(Data).Append("\n");
-      
       sb.Append("  Links: ").Append(Links).Append("\n");
-      
+      sb.Append("  Data: ").Append(Data).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
@@ -50,7 +44,7 @@ namespace Squiggle.Model {
     /// Get the JSON string presentation of the object
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
-    public  new string ToJson() {
+    public string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
 
