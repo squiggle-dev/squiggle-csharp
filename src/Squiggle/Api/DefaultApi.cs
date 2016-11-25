@@ -916,7 +916,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Address>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Address) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Address)));
+                (Address) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Address)));
             
         }
 
@@ -996,7 +996,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<FileObject>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FileObject) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(FileObject)));
+                (FileObject) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FileObject)));
             
         }
 
@@ -1080,7 +1080,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<GlobalTemplate>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GlobalTemplate) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(GlobalTemplate)));
+                (GlobalTemplate) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GlobalTemplate)));
             
         }
 
@@ -1164,7 +1164,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Snippet>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Snippet) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Snippet)));
+                (Snippet) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Snippet)));
             
         }
 
@@ -1248,7 +1248,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Template>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Template) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Template)));
+                (Template) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Template)));
             
         }
 
@@ -1332,7 +1332,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (User) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(User)));
+                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
             
         }
 
@@ -1878,7 +1878,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Address>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Address) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Address)));
+                (Address) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Address)));
             
         }
 
@@ -1961,7 +1961,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<FileObject>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FileObject) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(FileObject)));
+                (FileObject) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FileObject)));
             
         }
 
@@ -2051,7 +2051,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<GlobalTemplate>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GlobalTemplate) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(GlobalTemplate)));
+                (GlobalTemplate) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GlobalTemplate)));
             
         }
 
@@ -2141,7 +2141,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Snippet>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Snippet) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Snippet)));
+                (Snippet) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Snippet)));
             
         }
 
@@ -2231,7 +2231,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Template>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Template) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Template)));
+                (Template) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Template)));
             
         }
 
@@ -2321,7 +2321,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (User) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(User)));
+                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
             
         }
 
@@ -2398,7 +2398,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<List<Address>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Address>) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(List<Address>)));
+                (List<Address>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Address>)));
             
         }
 
@@ -2475,7 +2475,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<List<FileObject>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<FileObject>) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(List<FileObject>)));
+                (List<FileObject>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FileObject>)));
             
         }
 
@@ -2552,7 +2552,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<List<GlobalTemplate>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<GlobalTemplate>) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(List<GlobalTemplate>)));
+                (List<GlobalTemplate>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GlobalTemplate>)));
             
         }
 
@@ -2629,7 +2629,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<List<Snippet>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Snippet>) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(List<Snippet>)));
+                (List<Snippet>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Snippet>)));
             
         }
 
@@ -2706,7 +2706,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<List<Template>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Template>) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(List<Template>)));
+                (List<Template>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Template>)));
             
         }
 
@@ -2783,7 +2783,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<List<User>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<User>) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(List<User>)));
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
             
         }
 
@@ -2860,7 +2860,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Address>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Address) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Address)));
+                (Address) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Address)));
             
         }
 
@@ -2938,7 +2938,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<JSONWebTokenResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (JSONWebTokenResponse) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(JSONWebTokenResponse)));
+                (JSONWebTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebTokenResponse)));
             
         }
 
@@ -3015,7 +3015,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<FileObject>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FileObject) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(FileObject)));
+                (FileObject) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FileObject)));
             
         }
 
@@ -3092,7 +3092,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<GlobalTemplate>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GlobalTemplate) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(GlobalTemplate)));
+                (GlobalTemplate) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GlobalTemplate)));
             
         }
 
@@ -3169,7 +3169,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Snippet>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Snippet) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Snippet)));
+                (Snippet) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Snippet)));
             
         }
 
@@ -3246,7 +3246,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<Template>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Template) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(Template)));
+                (Template) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Template)));
             
         }
 
@@ -3323,7 +3323,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (User) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(User)));
+                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
             
         }
 
@@ -3401,7 +3401,7 @@ namespace Squiggle.Api
 
             return new ApiResponse<JSONWebTokenResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (JSONWebTokenResponse) Configuration.ApiClient.DeserializeJsonApiResponse(localVarResponse, typeof(JSONWebTokenResponse)));
+                (JSONWebTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebTokenResponse)));
             
         }
 
