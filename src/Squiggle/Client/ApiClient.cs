@@ -19,6 +19,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 
 namespace Squiggle.Client
@@ -296,7 +297,10 @@ namespace Squiggle.Client
             // at this point, it must be a model (json)
             try
             {
-                return JsonConvert.DeserializeObject(response.Content, type, serializerSettings);
+                JObject responseContent = (JObject)JsonConvert.DeserializeObject(response.Content, serializerSettings);
+                JToken responseData = responseContent["data"];
+
+                return responseData != null ? JsonConvert.DeserializeObject(responseData.ToString(), type, serializerSettings) : null;
             }
             catch (Exception e)
             {
