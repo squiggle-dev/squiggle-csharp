@@ -56,11 +56,6 @@ namespace Squiggle.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public int? Id { get; private set; }
         /// <summary>
-        /// Gets or Sets User
-        /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
-        public int? User { get; private set; }
-        /// <summary>
         /// Gets or Sets GlobalTemplate
         /// </summary>
         [DataMember(Name="global_template", EmitDefaultValue=false)]
@@ -114,7 +109,6 @@ namespace Squiggle.Model
             var sb = new StringBuilder();
             sb.Append("class Template {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  GlobalTemplate: ").Append(GlobalTemplate).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -164,11 +158,6 @@ namespace Squiggle.Model
                     this.Id == other.Id ||
                     this.Id != null &&
                     this.Id.Equals(other.Id)
-                ) && 
-                (
-                    this.User == other.User ||
-                    this.User != null &&
-                    this.User.Equals(other.User)
                 ) && 
                 (
                     this.GlobalTemplate == other.GlobalTemplate ||
@@ -230,8 +219,6 @@ namespace Squiggle.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Id != null)
                     hash = hash * 59 + this.Id.GetHashCode();
-                if (this.User != null)
-                    hash = hash * 59 + this.User.GetHashCode();
                 if (this.GlobalTemplate != null)
                     hash = hash * 59 + this.GlobalTemplate.GetHashCode();
                 if (this.Name != null)

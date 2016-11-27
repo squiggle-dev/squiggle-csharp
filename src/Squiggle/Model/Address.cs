@@ -133,11 +133,6 @@ namespace Squiggle.Model
         [DataMember(Name="signatures", EmitDefaultValue=false)]
         public List<Signature> Signatures { get; set; }
         /// <summary>
-        /// Gets or Sets User
-        /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
-        public int? User { get; private set; }
-        /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
@@ -169,7 +164,6 @@ namespace Squiggle.Model
             sb.Append("  Instagram: ").Append(Instagram).Append("\n");
             sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
             sb.Append("  Signatures: ").Append(Signatures).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -279,11 +273,6 @@ namespace Squiggle.Model
                     this.Signatures.SequenceEqual(other.Signatures)
                 ) && 
                 (
-                    this.User == other.User ||
-                    this.User != null &&
-                    this.User.Equals(other.User)
-                ) && 
-                (
                     this.CreatedAt == other.CreatedAt ||
                     this.CreatedAt != null &&
                     this.CreatedAt.Equals(other.CreatedAt)
@@ -334,8 +323,6 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Googleplus.GetHashCode();
                 if (this.Signatures != null)
                     hash = hash * 59 + this.Signatures.GetHashCode();
-                if (this.User != null)
-                    hash = hash * 59 + this.User.GetHashCode();
                 if (this.CreatedAt != null)
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)

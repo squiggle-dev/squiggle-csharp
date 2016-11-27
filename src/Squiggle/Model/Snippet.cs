@@ -48,11 +48,6 @@ namespace Squiggle.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public int? Id { get; private set; }
         /// <summary>
-        /// Gets or Sets User
-        /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
-        public int? User { get; private set; }
-        /// <summary>
         /// Gets or Sets ContentHtml
         /// </summary>
         [DataMember(Name="content_html", EmitDefaultValue=false)]
@@ -86,7 +81,6 @@ namespace Squiggle.Model
             var sb = new StringBuilder();
             sb.Append("class Snippet {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  ContentHtml: ").Append(ContentHtml).Append("\n");
             sb.Append("  ContentPlaintext: ").Append(ContentPlaintext).Append("\n");
             sb.Append("  Image: ").Append(Image).Append("\n");
@@ -134,11 +128,6 @@ namespace Squiggle.Model
                     this.Id.Equals(other.Id)
                 ) && 
                 (
-                    this.User == other.User ||
-                    this.User != null &&
-                    this.User.Equals(other.User)
-                ) && 
-                (
                     this.ContentHtml == other.ContentHtml ||
                     this.ContentHtml != null &&
                     this.ContentHtml.Equals(other.ContentHtml)
@@ -178,8 +167,6 @@ namespace Squiggle.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Id != null)
                     hash = hash * 59 + this.Id.GetHashCode();
-                if (this.User != null)
-                    hash = hash * 59 + this.User.GetHashCode();
                 if (this.ContentHtml != null)
                     hash = hash * 59 + this.ContentHtml.GetHashCode();
                 if (this.ContentPlaintext != null)

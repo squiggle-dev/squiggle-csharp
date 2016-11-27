@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
-**User** | **int?** |  | [optional] 
 **GlobalTemplate** | [**GlobalTemplate**](GlobalTemplate.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

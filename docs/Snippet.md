@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
-**User** | **int?** |  | [optional] 
 **ContentHtml** | **string** |  | [optional] 
 **ContentPlaintext** | **string** |  | [optional] 
 **Image** | [**FileObject**](FileObject.md) |  | [optional] 

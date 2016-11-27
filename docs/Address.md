@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **Instagram** | **string** |  | [optional] 
 **Googleplus** | **string** |  | [optional] 
 **Signatures** | [**List&lt;Signature&gt;**](Signature.md) |  | [optional] 
-**User** | **int?** |  | [optional] 
 **CreatedAt** | **DateTime?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
 
