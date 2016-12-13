@@ -52,7 +52,8 @@ namespace Squiggle.Model
         /// <param name="Googleplus">Googleplus.</param>
         /// <param name="Logo">Logo.</param>
         /// <param name="Snippet">Snippet.</param>
-        public User(string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, FileObject Logo = null, Snippet Snippet = null)
+        /// <param name="SnippetEnabled">SnippetEnabled.</param>
+        public User(string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, FileObject Logo = null, Snippet Snippet = null, bool? SnippetEnabled = null)
         {
             this.Email = Email;
             this.CompanyName = CompanyName;
@@ -74,6 +75,7 @@ namespace Squiggle.Model
             this.Googleplus = Googleplus;
             this.Logo = Logo;
             this.Snippet = Snippet;
+            this.SnippetEnabled = SnippetEnabled;
         }
         
         /// <summary>
@@ -182,6 +184,11 @@ namespace Squiggle.Model
         [DataMember(Name="snippet", EmitDefaultValue=false)]
         public Snippet Snippet { get; set; }
         /// <summary>
+        /// Gets or Sets SnippetEnabled
+        /// </summary>
+        [DataMember(Name="snippet_enabled", EmitDefaultValue=false)]
+        public bool? SnippetEnabled { get; set; }
+        /// <summary>
         /// Gets or Sets SecretKey
         /// </summary>
         [DataMember(Name="secret_key", EmitDefaultValue=false)]
@@ -230,6 +237,7 @@ namespace Squiggle.Model
             sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
             sb.Append("  Logo: ").Append(Logo).Append("\n");
             sb.Append("  Snippet: ").Append(Snippet).Append("\n");
+            sb.Append("  SnippetEnabled: ").Append(SnippetEnabled).Append("\n");
             sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
             sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -376,6 +384,11 @@ namespace Squiggle.Model
                     this.Snippet.Equals(other.Snippet)
                 ) && 
                 (
+                    this.SnippetEnabled == other.SnippetEnabled ||
+                    this.SnippetEnabled != null &&
+                    this.SnippetEnabled.Equals(other.SnippetEnabled)
+                ) && 
+                (
                     this.SecretKey == other.SecretKey ||
                     this.SecretKey != null &&
                     this.SecretKey.Equals(other.SecretKey)
@@ -450,6 +463,8 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Logo.GetHashCode();
                 if (this.Snippet != null)
                     hash = hash * 59 + this.Snippet.GetHashCode();
+                if (this.SnippetEnabled != null)
+                    hash = hash * 59 + this.SnippetEnabled.GetHashCode();
                 if (this.SecretKey != null)
                     hash = hash * 59 + this.SecretKey.GetHashCode();
                 if (this.AccessToken != null)
