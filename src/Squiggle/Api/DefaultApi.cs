@@ -585,8 +585,8 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>JSONWebTokenResponse</returns>
-        JSONWebTokenResponse GetAddressToken (LoginDetails data);
+        /// <returns>JSONWebToken</returns>
+        JSONWebToken GetAddressToken (LoginDetails data);
 
         /// <summary>
         /// 
@@ -596,8 +596,8 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>ApiResponse of JSONWebTokenResponse</returns>
-        ApiResponse<JSONWebTokenResponse> GetAddressTokenWithHttpInfo (LoginDetails data);
+        /// <returns>ApiResponse of JSONWebToken</returns>
+        ApiResponse<JSONWebToken> GetAddressTokenWithHttpInfo (LoginDetails data);
         /// <summary>
         /// 
         /// </summary>
@@ -711,8 +711,8 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>JSONWebTokenResponse</returns>
-        JSONWebTokenResponse GetUserToken (LoginDetails data);
+        /// <returns>JSONWebToken</returns>
+        JSONWebToken GetUserToken (LoginDetails data);
 
         /// <summary>
         /// 
@@ -722,8 +722,8 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>ApiResponse of JSONWebTokenResponse</returns>
-        ApiResponse<JSONWebTokenResponse> GetUserTokenWithHttpInfo (LoginDetails data);
+        /// <returns>ApiResponse of JSONWebToken</returns>
+        ApiResponse<JSONWebToken> GetUserTokenWithHttpInfo (LoginDetails data);
         #endregion Synchronous Operations
     }
 
@@ -2869,10 +2869,10 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>JSONWebTokenResponse</returns>
-        public JSONWebTokenResponse GetAddressToken (LoginDetails data)
+        /// <returns>JSONWebToken</returns>
+        public JSONWebToken GetAddressToken (LoginDetails data)
         {
-             ApiResponse<JSONWebTokenResponse> localVarResponse = GetAddressTokenWithHttpInfo(data);
+             ApiResponse<JSONWebToken> localVarResponse = GetAddressTokenWithHttpInfo(data);
              return localVarResponse.Data;
         }
 
@@ -2881,8 +2881,8 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>ApiResponse of JSONWebTokenResponse</returns>
-        public ApiResponse< JSONWebTokenResponse > GetAddressTokenWithHttpInfo (LoginDetails data)
+        /// <returns>ApiResponse of JSONWebToken</returns>
+        public ApiResponse< JSONWebToken > GetAddressTokenWithHttpInfo (LoginDetails data)
         {
             // verify the required parameter 'data' is set
             if (data == null)
@@ -2936,9 +2936,9 @@ namespace Squiggle.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<JSONWebTokenResponse>(localVarStatusCode,
+            return new ApiResponse<JSONWebToken>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (JSONWebTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebTokenResponse)));
+                (JSONWebToken) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebToken)));
             
         }
 
@@ -3332,10 +3332,10 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>JSONWebTokenResponse</returns>
-        public JSONWebTokenResponse GetUserToken (LoginDetails data)
+        /// <returns>JSONWebToken</returns>
+        public JSONWebToken GetUserToken (LoginDetails data)
         {
-             ApiResponse<JSONWebTokenResponse> localVarResponse = GetUserTokenWithHttpInfo(data);
+             ApiResponse<JSONWebToken> localVarResponse = GetUserTokenWithHttpInfo(data);
              return localVarResponse.Data;
         }
 
@@ -3344,8 +3344,8 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="data"></param>
-        /// <returns>ApiResponse of JSONWebTokenResponse</returns>
-        public ApiResponse< JSONWebTokenResponse > GetUserTokenWithHttpInfo (LoginDetails data)
+        /// <returns>ApiResponse of JSONWebToken</returns>
+        public ApiResponse< JSONWebToken > GetUserTokenWithHttpInfo (LoginDetails data)
         {
             // verify the required parameter 'data' is set
             if (data == null)
@@ -3399,9 +3399,9 @@ namespace Squiggle.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<JSONWebTokenResponse>(localVarStatusCode,
+            return new ApiResponse<JSONWebToken>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (JSONWebTokenResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebTokenResponse)));
+                (JSONWebToken) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebToken)));
             
         }
 

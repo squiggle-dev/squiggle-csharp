@@ -1712,7 +1712,7 @@ Name | Type | Description  | Notes
 
 <a name="getaddresstoken"></a>
 # **GetAddressToken**
-> JSONWebTokenResponse GetAddressToken (LoginDetails data)
+> JSONWebToken GetAddressToken (LoginDetails data)
 
 
 
@@ -1738,7 +1738,7 @@ namespace Example
 
             try
             {
-                JSONWebTokenResponse result = apiInstance.GetAddressToken(data);
+                JSONWebToken result = apiInstance.GetAddressToken(data);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1758,7 +1758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JSONWebTokenResponse**](JSONWebTokenResponse.md)
+[**JSONWebToken**](JSONWebToken.md)
 
 ### Authorization
 
@@ -2103,7 +2103,7 @@ Name | Type | Description  | Notes
 
 <a name="getusertoken"></a>
 # **GetUserToken**
-> JSONWebTokenResponse GetUserToken (LoginDetails data)
+> JSONWebToken GetUserToken (LoginDetails data)
 
 
 
@@ -2129,7 +2129,7 @@ namespace Example
 
             try
             {
-                JSONWebTokenResponse result = apiInstance.GetUserToken(data);
+                JSONWebToken result = apiInstance.GetUserToken(data);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2149,7 +2149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JSONWebTokenResponse**](JSONWebTokenResponse.md)
+[**JSONWebToken**](JSONWebToken.md)
 
 ### Authorization
 
