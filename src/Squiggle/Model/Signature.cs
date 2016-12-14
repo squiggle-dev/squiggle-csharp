@@ -32,11 +32,9 @@ namespace Squiggle.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Signature" /> class.
         /// </summary>
-        /// <param name="Template">Template.</param>
         /// <param name="Errors">Errors.</param>
-        public Signature(Template Template = null, Dictionary<string, string> Errors = null)
+        public Signature(Dictionary<string, string> Errors = null)
         {
-            this.Template = Template;
             this.Errors = Errors;
         }
         
@@ -51,11 +49,6 @@ namespace Squiggle.Model
         [DataMember(Name="label", EmitDefaultValue=false)]
         public string Label { get; private set; }
         /// <summary>
-        /// Gets or Sets Template
-        /// </summary>
-        [DataMember(Name="template", EmitDefaultValue=false)]
-        public Template Template { get; set; }
-        /// <summary>
         /// Gets or Sets Plain
         /// </summary>
         [DataMember(Name="plain", EmitDefaultValue=false)]
@@ -65,6 +58,16 @@ namespace Squiggle.Model
         /// </summary>
         [DataMember(Name="html", EmitDefaultValue=false)]
         public string Html { get; private set; }
+        /// <summary>
+        /// Gets or Sets Address
+        /// </summary>
+        [DataMember(Name="address", EmitDefaultValue=false)]
+        public int? Address { get; private set; }
+        /// <summary>
+        /// Gets or Sets Template
+        /// </summary>
+        [DataMember(Name="template", EmitDefaultValue=false)]
+        public int? Template { get; private set; }
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
@@ -80,9 +83,10 @@ namespace Squiggle.Model
             sb.Append("class Signature {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  Template: ").Append(Template).Append("\n");
             sb.Append("  Plain: ").Append(Plain).Append("\n");
             sb.Append("  Html: ").Append(Html).Append("\n");
+            sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  Template: ").Append(Template).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -131,11 +135,6 @@ namespace Squiggle.Model
                     this.Label.Equals(other.Label)
                 ) && 
                 (
-                    this.Template == other.Template ||
-                    this.Template != null &&
-                    this.Template.Equals(other.Template)
-                ) && 
-                (
                     this.Plain == other.Plain ||
                     this.Plain != null &&
                     this.Plain.Equals(other.Plain)
@@ -144,6 +143,16 @@ namespace Squiggle.Model
                     this.Html == other.Html ||
                     this.Html != null &&
                     this.Html.Equals(other.Html)
+                ) && 
+                (
+                    this.Address == other.Address ||
+                    this.Address != null &&
+                    this.Address.Equals(other.Address)
+                ) && 
+                (
+                    this.Template == other.Template ||
+                    this.Template != null &&
+                    this.Template.Equals(other.Template)
                 ) && 
                 (
                     this.Errors == other.Errors ||
@@ -167,12 +176,14 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Label != null)
                     hash = hash * 59 + this.Label.GetHashCode();
-                if (this.Template != null)
-                    hash = hash * 59 + this.Template.GetHashCode();
                 if (this.Plain != null)
                     hash = hash * 59 + this.Plain.GetHashCode();
                 if (this.Html != null)
                     hash = hash * 59 + this.Html.GetHashCode();
+                if (this.Address != null)
+                    hash = hash * 59 + this.Address.GetHashCode();
+                if (this.Template != null)
+                    hash = hash * 59 + this.Template.GetHashCode();
                 if (this.Errors != null)
                     hash = hash * 59 + this.Errors.GetHashCode();
                 return hash;
