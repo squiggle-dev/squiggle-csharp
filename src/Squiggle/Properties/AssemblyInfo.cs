@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Squiggle Api")]
+[assembly: AssemblyTitle("Squiggle")]
 [assembly: AssemblyDescription("C# .NET wrapper for the Squiggle API")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Occam Software")]
-[assembly: AssemblyProduct("SquiggleApi")]
+[assembly: AssemblyProduct("Squiggle")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
