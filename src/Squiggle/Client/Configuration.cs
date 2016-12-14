@@ -46,7 +46,7 @@ namespace Squiggle.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Swagger-Codegen/0.2/csharp"
+                             string userAgent = "Swagger-Codegen/0.2.1/csharp"
                             )
         {
             setApiClientUsingDefault(apiClient);
