@@ -44,8 +44,9 @@ namespace Squiggle.Model
         /// <param name="Twitter">Twitter.</param>
         /// <param name="Instagram">Instagram.</param>
         /// <param name="Googleplus">Googleplus.</param>
+        /// <param name="Template">Template.</param>
         /// <param name="Signatures">Signatures.</param>
-        public Address(string Email = null, string Password = null, string FirstName = null, string LastName = null, string JobTitle = null, string TelMobile = null, string TelDirect = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, List<Signature> Signatures = null)
+        public Address(string Email = null, string Password = null, string FirstName = null, string LastName = null, string JobTitle = null, string TelMobile = null, string TelDirect = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, int? Template = null, List<Signature> Signatures = null)
         {
             this.Email = Email;
             this.Password = Password;
@@ -59,6 +60,7 @@ namespace Squiggle.Model
             this.Twitter = Twitter;
             this.Instagram = Instagram;
             this.Googleplus = Googleplus;
+            this.Template = Template;
             this.Signatures = Signatures;
         }
         
@@ -128,6 +130,11 @@ namespace Squiggle.Model
         [DataMember(Name="googleplus", EmitDefaultValue=false)]
         public string Googleplus { get; set; }
         /// <summary>
+        /// Gets or Sets Template
+        /// </summary>
+        [DataMember(Name="template", EmitDefaultValue=false)]
+        public int? Template { get; set; }
+        /// <summary>
         /// Gets or Sets Signatures
         /// </summary>
         [DataMember(Name="signatures", EmitDefaultValue=false)]
@@ -163,6 +170,7 @@ namespace Squiggle.Model
             sb.Append("  Twitter: ").Append(Twitter).Append("\n");
             sb.Append("  Instagram: ").Append(Instagram).Append("\n");
             sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
+            sb.Append("  Template: ").Append(Template).Append("\n");
             sb.Append("  Signatures: ").Append(Signatures).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -268,6 +276,11 @@ namespace Squiggle.Model
                     this.Googleplus.Equals(other.Googleplus)
                 ) && 
                 (
+                    this.Template == other.Template ||
+                    this.Template != null &&
+                    this.Template.Equals(other.Template)
+                ) && 
+                (
                     this.Signatures == other.Signatures ||
                     this.Signatures != null &&
                     this.Signatures.SequenceEqual(other.Signatures)
@@ -321,6 +334,8 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Instagram.GetHashCode();
                 if (this.Googleplus != null)
                     hash = hash * 59 + this.Googleplus.GetHashCode();
+                if (this.Template != null)
+                    hash = hash * 59 + this.Template.GetHashCode();
                 if (this.Signatures != null)
                     hash = hash * 59 + this.Signatures.GetHashCode();
                 if (this.CreatedAt != null)

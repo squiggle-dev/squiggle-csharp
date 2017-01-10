@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Googleplus** | **string** |  | [optional] 
 **Logo** | [**FileObject**](FileObject.md) |  | [optional] 
 **Snippet** | [**Snippet**](Snippet.md) |  | [optional] 
+**Template** | **int?** |  | [optional] 
 **SnippetEnabled** | **bool?** |  | [optional] 
 **SecretKey** | **string** |  | [optional] 
 **AccessToken** | **string** |  | [optional] 

@@ -46,7 +46,7 @@ namespace Squiggle.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Swagger-Codegen/0.2.2/csharp"
+                             string userAgent = "Swagger-Codegen/0.2.3/csharp"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -81,7 +81,7 @@ namespace Squiggle.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "0.2.2";
+        public const string Version = "0.2.3";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -318,7 +318,7 @@ namespace Squiggle.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
             report += "    Version of the API: 0.0.1\n";
-            report += "    SDK Package Version: 0.2.2\n";
+            report += "    SDK Package Version: 0.2.3\n";
 
             return report;
         }

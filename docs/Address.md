@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Twitter** | **string** |  | [optional] 
 **Instagram** | **string** |  | [optional] 
 **Googleplus** | **string** |  | [optional] 
+**Template** | **int?** |  | [optional] 
 **Signatures** | [**List&lt;Signature&gt;**](Signature.md) |  | [optional] 
 **CreatedAt** | **DateTime?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
