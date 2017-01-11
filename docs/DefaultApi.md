@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteaddress"></a>
 # **DeleteAddress**
-> void DeleteAddress (long? id)
+> void DeleteAddress (long? id, bool? force = null)
 
 
 
@@ -466,10 +466,11 @@ namespace Example
 
             var apiInstance = new DefaultApi();
             var id = 789;  // long? | ID of address to delete
+            var force = true;  // bool? | Disables soft-delete when true, completely removing the row (use with caution!) (optional) 
 
             try
             {
-                apiInstance.DeleteAddress(id);
+                apiInstance.DeleteAddress(id, force);
             }
             catch (Exception e)
             {
@@ -485,6 +486,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of address to delete | 
+ **force** | **bool?**| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -568,7 +570,7 @@ void (empty response body)
 
 <a name="deleteglobaltemplate"></a>
 # **DeleteGlobalTemplate**
-> void DeleteGlobalTemplate (long? id)
+> void DeleteGlobalTemplate (long? id, bool? force = null)
 
 
 
@@ -596,10 +598,11 @@ namespace Example
 
             var apiInstance = new DefaultApi();
             var id = 789;  // long? | ID of global template to delete
+            var force = true;  // bool? | Disables soft-delete when true, completely removing the row (use with caution!) (optional) 
 
             try
             {
-                apiInstance.DeleteGlobalTemplate(id);
+                apiInstance.DeleteGlobalTemplate(id, force);
             }
             catch (Exception e)
             {
@@ -615,6 +618,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of global template to delete | 
+ **force** | **bool?**| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -633,7 +637,7 @@ void (empty response body)
 
 <a name="deletesnippet"></a>
 # **DeleteSnippet**
-> void DeleteSnippet (long? id)
+> void DeleteSnippet (long? id, bool? force = null)
 
 
 
@@ -661,10 +665,11 @@ namespace Example
 
             var apiInstance = new DefaultApi();
             var id = 789;  // long? | ID of snippet to delete
+            var force = true;  // bool? | Disables soft-delete when true, completely removing the row (use with caution!) (optional) 
 
             try
             {
-                apiInstance.DeleteSnippet(id);
+                apiInstance.DeleteSnippet(id, force);
             }
             catch (Exception e)
             {
@@ -680,6 +685,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of snippet to delete | 
+ **force** | **bool?**| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -698,7 +704,7 @@ void (empty response body)
 
 <a name="deletetemplate"></a>
 # **DeleteTemplate**
-> void DeleteTemplate (long? id)
+> void DeleteTemplate (long? id, bool? force = null)
 
 
 
@@ -726,10 +732,11 @@ namespace Example
 
             var apiInstance = new DefaultApi();
             var id = 789;  // long? | ID of template to delete
+            var force = true;  // bool? | Disables soft-delete when true, completely removing the row (use with caution!) (optional) 
 
             try
             {
-                apiInstance.DeleteTemplate(id);
+                apiInstance.DeleteTemplate(id, force);
             }
             catch (Exception e)
             {
@@ -745,6 +752,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of template to delete | 
+ **force** | **bool?**| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -763,7 +771,7 @@ void (empty response body)
 
 <a name="deleteuser"></a>
 # **DeleteUser**
-> void DeleteUser (long? id)
+> void DeleteUser (long? id, bool? force = null)
 
 
 
@@ -791,10 +799,11 @@ namespace Example
 
             var apiInstance = new DefaultApi();
             var id = 789;  // long? | ID of user to delete
+            var force = true;  // bool? | Disables soft-delete when true, completely removing the row (use with caution!) (optional) 
 
             try
             {
-                apiInstance.DeleteUser(id);
+                apiInstance.DeleteUser(id, force);
             }
             catch (Exception e)
             {
@@ -810,6 +819,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| ID of user to delete | 
+ **force** | **bool?**| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 

@@ -160,8 +160,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of address to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        void DeleteAddress (long? id);
+        void DeleteAddress (long? id, bool? force = null);
 
         /// <summary>
         /// 
@@ -171,8 +172,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of address to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteAddressWithHttpInfo (long? id);
+        ApiResponse<Object> DeleteAddressWithHttpInfo (long? id, bool? force = null);
         /// <summary>
         /// 
         /// </summary>
@@ -202,8 +204,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of global template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        void DeleteGlobalTemplate (long? id);
+        void DeleteGlobalTemplate (long? id, bool? force = null);
 
         /// <summary>
         /// 
@@ -213,8 +216,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of global template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteGlobalTemplateWithHttpInfo (long? id);
+        ApiResponse<Object> DeleteGlobalTemplateWithHttpInfo (long? id, bool? force = null);
         /// <summary>
         /// 
         /// </summary>
@@ -223,8 +227,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of snippet to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        void DeleteSnippet (long? id);
+        void DeleteSnippet (long? id, bool? force = null);
 
         /// <summary>
         /// 
@@ -234,8 +239,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of snippet to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteSnippetWithHttpInfo (long? id);
+        ApiResponse<Object> DeleteSnippetWithHttpInfo (long? id, bool? force = null);
         /// <summary>
         /// 
         /// </summary>
@@ -244,8 +250,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        void DeleteTemplate (long? id);
+        void DeleteTemplate (long? id, bool? force = null);
 
         /// <summary>
         /// 
@@ -255,8 +262,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteTemplateWithHttpInfo (long? id);
+        ApiResponse<Object> DeleteTemplateWithHttpInfo (long? id, bool? force = null);
         /// <summary>
         /// 
         /// </summary>
@@ -265,8 +273,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of user to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        void DeleteUser (long? id);
+        void DeleteUser (long? id, bool? force = null);
 
         /// <summary>
         /// 
@@ -276,8 +285,9 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of user to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteUserWithHttpInfo (long? id);
+        ApiResponse<Object> DeleteUserWithHttpInfo (long? id, bool? force = null);
         /// <summary>
         /// 
         /// </summary>
@@ -1341,10 +1351,11 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of address to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        public void DeleteAddress (long? id)
+        public void DeleteAddress (long? id, bool? force = null)
         {
-             DeleteAddressWithHttpInfo(id);
+             DeleteAddressWithHttpInfo(id, force);
         }
 
         /// <summary>
@@ -1352,8 +1363,9 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of address to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteAddressWithHttpInfo (long? id)
+        public ApiResponse<Object> DeleteAddressWithHttpInfo (long? id, bool? force = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1385,6 +1397,7 @@ namespace Squiggle.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (force != null) localVarQueryParams.Add("force", Configuration.ApiClient.ParameterToString(force)); // query parameter
 
             // authentication (jwt) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1493,10 +1506,11 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of global template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        public void DeleteGlobalTemplate (long? id)
+        public void DeleteGlobalTemplate (long? id, bool? force = null)
         {
-             DeleteGlobalTemplateWithHttpInfo(id);
+             DeleteGlobalTemplateWithHttpInfo(id, force);
         }
 
         /// <summary>
@@ -1504,8 +1518,9 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of global template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteGlobalTemplateWithHttpInfo (long? id)
+        public ApiResponse<Object> DeleteGlobalTemplateWithHttpInfo (long? id, bool? force = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1537,6 +1552,7 @@ namespace Squiggle.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (force != null) localVarQueryParams.Add("force", Configuration.ApiClient.ParameterToString(force)); // query parameter
 
             // authentication (jwt) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1569,10 +1585,11 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of snippet to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        public void DeleteSnippet (long? id)
+        public void DeleteSnippet (long? id, bool? force = null)
         {
-             DeleteSnippetWithHttpInfo(id);
+             DeleteSnippetWithHttpInfo(id, force);
         }
 
         /// <summary>
@@ -1580,8 +1597,9 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of snippet to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteSnippetWithHttpInfo (long? id)
+        public ApiResponse<Object> DeleteSnippetWithHttpInfo (long? id, bool? force = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1613,6 +1631,7 @@ namespace Squiggle.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (force != null) localVarQueryParams.Add("force", Configuration.ApiClient.ParameterToString(force)); // query parameter
 
             // authentication (jwt) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1645,10 +1664,11 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        public void DeleteTemplate (long? id)
+        public void DeleteTemplate (long? id, bool? force = null)
         {
-             DeleteTemplateWithHttpInfo(id);
+             DeleteTemplateWithHttpInfo(id, force);
         }
 
         /// <summary>
@@ -1656,8 +1676,9 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of template to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteTemplateWithHttpInfo (long? id)
+        public ApiResponse<Object> DeleteTemplateWithHttpInfo (long? id, bool? force = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1689,6 +1710,7 @@ namespace Squiggle.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (force != null) localVarQueryParams.Add("force", Configuration.ApiClient.ParameterToString(force)); // query parameter
 
             // authentication (jwt) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1721,10 +1743,11 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of user to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns></returns>
-        public void DeleteUser (long? id)
+        public void DeleteUser (long? id, bool? force = null)
         {
-             DeleteUserWithHttpInfo(id);
+             DeleteUserWithHttpInfo(id, force);
         }
 
         /// <summary>
@@ -1732,8 +1755,9 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of user to delete</param>
+        /// <param name="force">Disables soft-delete when true, completely removing the row (use with caution!) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteUserWithHttpInfo (long? id)
+        public ApiResponse<Object> DeleteUserWithHttpInfo (long? id, bool? force = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1765,6 +1789,7 @@ namespace Squiggle.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (force != null) localVarQueryParams.Add("force", Configuration.ApiClient.ParameterToString(force)); // query parameter
 
             // authentication (jwt) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
