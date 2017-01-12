@@ -435,10 +435,11 @@ namespace Squiggle.Api
         /// Gets addresses
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;Address&gt;</returns>
-        List<Address> FindAddresses (int? offset = null, int? limit = null);
+        List<Address> FindAddresses (string sort = null, int? offset = null, int? limit = null);
 
         /// <summary>
         /// 
@@ -447,10 +448,11 @@ namespace Squiggle.Api
         /// Gets addresses
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;Address&gt;</returns>
-        ApiResponse<List<Address>> FindAddressesWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<List<Address>> FindAddressesWithHttpInfo (string sort = null, int? offset = null, int? limit = null);
         /// <summary>
         /// 
         /// </summary>
@@ -458,10 +460,11 @@ namespace Squiggle.Api
         /// Gets files
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;FileObject&gt;</returns>
-        List<FileObject> FindFiles (int? offset = null, int? limit = null);
+        List<FileObject> FindFiles (string sort = null, int? offset = null, int? limit = null);
 
         /// <summary>
         /// 
@@ -470,10 +473,11 @@ namespace Squiggle.Api
         /// Gets files
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;FileObject&gt;</returns>
-        ApiResponse<List<FileObject>> FindFilesWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<List<FileObject>> FindFilesWithHttpInfo (string sort = null, int? offset = null, int? limit = null);
         /// <summary>
         /// 
         /// </summary>
@@ -481,10 +485,11 @@ namespace Squiggle.Api
         /// Gets global templates
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;GlobalTemplate&gt;</returns>
-        List<GlobalTemplate> FindGlobalTemplates (int? offset = null, int? limit = null);
+        List<GlobalTemplate> FindGlobalTemplates (string sort = null, int? offset = null, int? limit = null);
 
         /// <summary>
         /// 
@@ -493,10 +498,11 @@ namespace Squiggle.Api
         /// Gets global templates
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;GlobalTemplate&gt;</returns>
-        ApiResponse<List<GlobalTemplate>> FindGlobalTemplatesWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<List<GlobalTemplate>> FindGlobalTemplatesWithHttpInfo (string sort = null, int? offset = null, int? limit = null);
         /// <summary>
         /// 
         /// </summary>
@@ -504,10 +510,11 @@ namespace Squiggle.Api
         /// Gets snippets
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;Snippet&gt;</returns>
-        List<Snippet> FindSnippets (int? offset = null, int? limit = null);
+        List<Snippet> FindSnippets (string sort = null, int? offset = null, int? limit = null);
 
         /// <summary>
         /// 
@@ -516,10 +523,11 @@ namespace Squiggle.Api
         /// Gets snippets
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;Snippet&gt;</returns>
-        ApiResponse<List<Snippet>> FindSnippetsWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<List<Snippet>> FindSnippetsWithHttpInfo (string sort = null, int? offset = null, int? limit = null);
         /// <summary>
         /// 
         /// </summary>
@@ -527,10 +535,11 @@ namespace Squiggle.Api
         /// Gets templates
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;Template&gt;</returns>
-        List<Template> FindTemplates (int? offset = null, int? limit = null);
+        List<Template> FindTemplates (string sort = null, int? offset = null, int? limit = null);
 
         /// <summary>
         /// 
@@ -539,10 +548,11 @@ namespace Squiggle.Api
         /// Gets templates
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;Template&gt;</returns>
-        ApiResponse<List<Template>> FindTemplatesWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<List<Template>> FindTemplatesWithHttpInfo (string sort = null, int? offset = null, int? limit = null);
         /// <summary>
         /// 
         /// </summary>
@@ -550,10 +560,11 @@ namespace Squiggle.Api
         /// Gets users
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;User&gt;</returns>
-        List<User> FindUsers (int? offset = null, int? limit = null);
+        List<User> FindUsers (string sort = null, int? offset = null, int? limit = null);
 
         /// <summary>
         /// 
@@ -562,10 +573,11 @@ namespace Squiggle.Api
         /// Gets users
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;User&gt;</returns>
-        ApiResponse<List<User>> FindUsersWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<List<User>> FindUsersWithHttpInfo (string sort = null, int? offset = null, int? limit = null);
         /// <summary>
         /// 
         /// </summary>
@@ -2354,12 +2366,13 @@ namespace Squiggle.Api
         ///  Gets addresses
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;Address&gt;</returns>
-        public List<Address> FindAddresses (int? offset = null, int? limit = null)
+        public List<Address> FindAddresses (string sort = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<List<Address>> localVarResponse = FindAddressesWithHttpInfo(offset, limit);
+             ApiResponse<List<Address>> localVarResponse = FindAddressesWithHttpInfo(sort, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -2367,10 +2380,11 @@ namespace Squiggle.Api
         ///  Gets addresses
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;Address&gt;</returns>
-        public ApiResponse< List<Address> > FindAddressesWithHttpInfo (int? offset = null, int? limit = null)
+        public ApiResponse< List<Address> > FindAddressesWithHttpInfo (string sort = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/addresses";
@@ -2398,6 +2412,7 @@ namespace Squiggle.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
 
@@ -2431,12 +2446,13 @@ namespace Squiggle.Api
         ///  Gets files
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;FileObject&gt;</returns>
-        public List<FileObject> FindFiles (int? offset = null, int? limit = null)
+        public List<FileObject> FindFiles (string sort = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<List<FileObject>> localVarResponse = FindFilesWithHttpInfo(offset, limit);
+             ApiResponse<List<FileObject>> localVarResponse = FindFilesWithHttpInfo(sort, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -2444,10 +2460,11 @@ namespace Squiggle.Api
         ///  Gets files
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;FileObject&gt;</returns>
-        public ApiResponse< List<FileObject> > FindFilesWithHttpInfo (int? offset = null, int? limit = null)
+        public ApiResponse< List<FileObject> > FindFilesWithHttpInfo (string sort = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/files";
@@ -2475,6 +2492,7 @@ namespace Squiggle.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
 
@@ -2508,12 +2526,13 @@ namespace Squiggle.Api
         ///  Gets global templates
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;GlobalTemplate&gt;</returns>
-        public List<GlobalTemplate> FindGlobalTemplates (int? offset = null, int? limit = null)
+        public List<GlobalTemplate> FindGlobalTemplates (string sort = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<List<GlobalTemplate>> localVarResponse = FindGlobalTemplatesWithHttpInfo(offset, limit);
+             ApiResponse<List<GlobalTemplate>> localVarResponse = FindGlobalTemplatesWithHttpInfo(sort, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -2521,10 +2540,11 @@ namespace Squiggle.Api
         ///  Gets global templates
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;GlobalTemplate&gt;</returns>
-        public ApiResponse< List<GlobalTemplate> > FindGlobalTemplatesWithHttpInfo (int? offset = null, int? limit = null)
+        public ApiResponse< List<GlobalTemplate> > FindGlobalTemplatesWithHttpInfo (string sort = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/global-templates";
@@ -2552,6 +2572,7 @@ namespace Squiggle.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
 
@@ -2585,12 +2606,13 @@ namespace Squiggle.Api
         ///  Gets snippets
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;Snippet&gt;</returns>
-        public List<Snippet> FindSnippets (int? offset = null, int? limit = null)
+        public List<Snippet> FindSnippets (string sort = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<List<Snippet>> localVarResponse = FindSnippetsWithHttpInfo(offset, limit);
+             ApiResponse<List<Snippet>> localVarResponse = FindSnippetsWithHttpInfo(sort, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -2598,10 +2620,11 @@ namespace Squiggle.Api
         ///  Gets snippets
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;Snippet&gt;</returns>
-        public ApiResponse< List<Snippet> > FindSnippetsWithHttpInfo (int? offset = null, int? limit = null)
+        public ApiResponse< List<Snippet> > FindSnippetsWithHttpInfo (string sort = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/snippets";
@@ -2629,6 +2652,7 @@ namespace Squiggle.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
 
@@ -2662,12 +2686,13 @@ namespace Squiggle.Api
         ///  Gets templates
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;Template&gt;</returns>
-        public List<Template> FindTemplates (int? offset = null, int? limit = null)
+        public List<Template> FindTemplates (string sort = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<List<Template>> localVarResponse = FindTemplatesWithHttpInfo(offset, limit);
+             ApiResponse<List<Template>> localVarResponse = FindTemplatesWithHttpInfo(sort, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -2675,10 +2700,11 @@ namespace Squiggle.Api
         ///  Gets templates
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;Template&gt;</returns>
-        public ApiResponse< List<Template> > FindTemplatesWithHttpInfo (int? offset = null, int? limit = null)
+        public ApiResponse< List<Template> > FindTemplatesWithHttpInfo (string sort = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/templates";
@@ -2706,6 +2732,7 @@ namespace Squiggle.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
 
@@ -2739,12 +2766,13 @@ namespace Squiggle.Api
         ///  Gets users
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>List&lt;User&gt;</returns>
-        public List<User> FindUsers (int? offset = null, int? limit = null)
+        public List<User> FindUsers (string sort = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<List<User>> localVarResponse = FindUsersWithHttpInfo(offset, limit);
+             ApiResponse<List<User>> localVarResponse = FindUsersWithHttpInfo(sort, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -2752,10 +2780,11 @@ namespace Squiggle.Api
         ///  Gets users
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
         /// <param name="offset">The start offset of the result set (optional)</param>
         /// <param name="limit">Max records to return (optional)</param>
         /// <returns>ApiResponse of List&lt;User&gt;</returns>
-        public ApiResponse< List<User> > FindUsersWithHttpInfo (int? offset = null, int? limit = null)
+        public ApiResponse< List<User> > FindUsersWithHttpInfo (string sort = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/users";
@@ -2783,6 +2812,7 @@ namespace Squiggle.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
 
