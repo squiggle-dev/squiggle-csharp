@@ -1248,7 +1248,7 @@ Name | Type | Description  | Notes
 
 <a name="findaddresses"></a>
 # **FindAddresses**
-> List<Address> FindAddresses (string sort = null, int? offset = null, int? limit = null)
+> List<Address> FindAddresses (string filter = null, string sort = null, int? offset = null, int? limit = null)
 
 
 
@@ -1275,13 +1275,14 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
             var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
             var offset = 56;  // int? | The start offset of the result set (optional) 
             var limit = 56;  // int? | Max records to return (optional) 
 
             try
             {
-                List&lt;Address&gt; result = apiInstance.FindAddresses(sort, offset, limit);
+                List&lt;Address&gt; result = apiInstance.FindAddresses(filter, sort, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1297,6 +1298,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
  **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
  **offset** | **int?**| The start offset of the result set | [optional] 
  **limit** | **int?**| Max records to return | [optional] 
@@ -1318,7 +1320,7 @@ Name | Type | Description  | Notes
 
 <a name="findfiles"></a>
 # **FindFiles**
-> List<FileObject> FindFiles (string sort = null, int? offset = null, int? limit = null)
+> List<FileObject> FindFiles (string filter = null, string sort = null, int? offset = null, int? limit = null)
 
 
 
@@ -1345,13 +1347,14 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
             var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
             var offset = 56;  // int? | The start offset of the result set (optional) 
             var limit = 56;  // int? | Max records to return (optional) 
 
             try
             {
-                List&lt;FileObject&gt; result = apiInstance.FindFiles(sort, offset, limit);
+                List&lt;FileObject&gt; result = apiInstance.FindFiles(filter, sort, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1367,6 +1370,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
  **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
  **offset** | **int?**| The start offset of the result set | [optional] 
  **limit** | **int?**| Max records to return | [optional] 
@@ -1388,7 +1392,7 @@ Name | Type | Description  | Notes
 
 <a name="findglobaltemplates"></a>
 # **FindGlobalTemplates**
-> List<GlobalTemplate> FindGlobalTemplates (string sort = null, int? offset = null, int? limit = null)
+> List<GlobalTemplate> FindGlobalTemplates (string filter = null, string sort = null, int? offset = null, int? limit = null)
 
 
 
@@ -1415,13 +1419,14 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
             var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
             var offset = 56;  // int? | The start offset of the result set (optional) 
             var limit = 56;  // int? | Max records to return (optional) 
 
             try
             {
-                List&lt;GlobalTemplate&gt; result = apiInstance.FindGlobalTemplates(sort, offset, limit);
+                List&lt;GlobalTemplate&gt; result = apiInstance.FindGlobalTemplates(filter, sort, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1437,6 +1442,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
  **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
  **offset** | **int?**| The start offset of the result set | [optional] 
  **limit** | **int?**| Max records to return | [optional] 
@@ -1458,7 +1464,7 @@ Name | Type | Description  | Notes
 
 <a name="findsnippets"></a>
 # **FindSnippets**
-> List<Snippet> FindSnippets (string sort = null, int? offset = null, int? limit = null)
+> List<Snippet> FindSnippets (string filter = null, string sort = null, int? offset = null, int? limit = null)
 
 
 
@@ -1485,13 +1491,14 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
             var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
             var offset = 56;  // int? | The start offset of the result set (optional) 
             var limit = 56;  // int? | Max records to return (optional) 
 
             try
             {
-                List&lt;Snippet&gt; result = apiInstance.FindSnippets(sort, offset, limit);
+                List&lt;Snippet&gt; result = apiInstance.FindSnippets(filter, sort, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1507,6 +1514,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
  **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
  **offset** | **int?**| The start offset of the result set | [optional] 
  **limit** | **int?**| Max records to return | [optional] 
@@ -1528,7 +1536,7 @@ Name | Type | Description  | Notes
 
 <a name="findtemplates"></a>
 # **FindTemplates**
-> List<Template> FindTemplates (string sort = null, int? offset = null, int? limit = null)
+> List<Template> FindTemplates (string filter = null, string sort = null, int? offset = null, int? limit = null)
 
 
 
@@ -1555,13 +1563,14 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
             var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
             var offset = 56;  // int? | The start offset of the result set (optional) 
             var limit = 56;  // int? | Max records to return (optional) 
 
             try
             {
-                List&lt;Template&gt; result = apiInstance.FindTemplates(sort, offset, limit);
+                List&lt;Template&gt; result = apiInstance.FindTemplates(filter, sort, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1577,6 +1586,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
  **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
  **offset** | **int?**| The start offset of the result set | [optional] 
  **limit** | **int?**| Max records to return | [optional] 
@@ -1598,7 +1608,7 @@ Name | Type | Description  | Notes
 
 <a name="findusers"></a>
 # **FindUsers**
-> List<User> FindUsers (string sort = null, int? offset = null, int? limit = null)
+> List<User> FindUsers (string filter = null, string sort = null, int? offset = null, int? limit = null)
 
 
 
@@ -1625,13 +1635,14 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
             var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
             var offset = 56;  // int? | The start offset of the result set (optional) 
             var limit = 56;  // int? | Max records to return (optional) 
 
             try
             {
-                List&lt;User&gt; result = apiInstance.FindUsers(sort, offset, limit);
+                List&lt;User&gt; result = apiInstance.FindUsers(filter, sort, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1647,6 +1658,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
  **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
  **offset** | **int?**| The start offset of the result set | [optional] 
  **limit** | **int?**| Max records to return | [optional] 
