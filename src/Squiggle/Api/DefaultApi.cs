@@ -513,6 +513,33 @@ namespace Squiggle.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Gets signatures
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)</param>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
+        /// <param name="offset">The start offset of the result set (optional)</param>
+        /// <param name="limit">Max records to return (optional)</param>
+        /// <returns>List&lt;Signature&gt;</returns>
+        List<Signature> FindSignatures (string filter = null, string sort = null, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets signatures
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)</param>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
+        /// <param name="offset">The start offset of the result set (optional)</param>
+        /// <param name="limit">Max records to return (optional)</param>
+        /// <returns>ApiResponse of List&lt;Signature&gt;</returns>
+        ApiResponse<List<Signature>> FindSignaturesWithHttpInfo (string filter = null, string sort = null, int? offset = null, int? limit = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Gets snippets
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -674,6 +701,27 @@ namespace Squiggle.Api
         /// <param name="id">ID of global template to get</param>
         /// <returns>ApiResponse of GlobalTemplate</returns>
         ApiResponse<GlobalTemplate> GetGlobalTemplateWithHttpInfo (long? id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a signature with the specified ID
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of signature to get</param>
+        /// <returns>Signature</returns>
+        Signature GetSignature (long? id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a signature with the specified ID
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of signature to get</param>
+        /// <returns>ApiResponse of Signature</returns>
+        ApiResponse<Signature> GetSignatureWithHttpInfo (long? id);
         /// <summary>
         /// 
         /// </summary>
@@ -2624,6 +2672,89 @@ namespace Squiggle.Api
         }
 
         /// <summary>
+        ///  Gets signatures
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)</param>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
+        /// <param name="offset">The start offset of the result set (optional)</param>
+        /// <param name="limit">Max records to return (optional)</param>
+        /// <returns>List&lt;Signature&gt;</returns>
+        public List<Signature> FindSignatures (string filter = null, string sort = null, int? offset = null, int? limit = null)
+        {
+             ApiResponse<List<Signature>> localVarResponse = FindSignaturesWithHttpInfo(filter, sort, offset, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets signatures
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="filter">A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)</param>
+        /// <param name="sort">A comma-separated list of fields to sort by (optional)</param>
+        /// <param name="offset">The start offset of the result set (optional)</param>
+        /// <param name="limit">Max records to return (optional)</param>
+        /// <returns>ApiResponse of List&lt;Signature&gt;</returns>
+        public ApiResponse< List<Signature> > FindSignaturesWithHttpInfo (string filter = null, string sort = null, int? offset = null, int? limit = null)
+        {
+
+            var localVarPath = "/signatures";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (filter != null) localVarQueryParams.Add("filter", Configuration.ApiClient.ParameterToString(filter)); // query parameter
+            if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
+            if (offset != null) localVarQueryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (limit != null) localVarQueryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+
+            // authentication (jwt) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FindSignatures", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<Signature>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<Signature>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Signature>)));
+            
+        }
+
+        /// <summary>
         ///  Gets snippets
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3178,6 +3309,83 @@ namespace Squiggle.Api
             return new ApiResponse<GlobalTemplate>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (GlobalTemplate) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GlobalTemplate)));
+            
+        }
+
+        /// <summary>
+        ///  Gets a signature with the specified ID
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of signature to get</param>
+        /// <returns>Signature</returns>
+        public Signature GetSignature (long? id)
+        {
+             ApiResponse<Signature> localVarResponse = GetSignatureWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets a signature with the specified ID
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of signature to get</param>
+        /// <returns>ApiResponse of Signature</returns>
+        public ApiResponse< Signature > GetSignatureWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DefaultApi->GetSignature");
+
+            var localVarPath = "/signatures/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (jwt) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSignature", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Signature>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Signature) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Signature)));
             
         }
 

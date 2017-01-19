@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**FindAddresses**](DefaultApi.md#findaddresses) | **GET** /addresses | 
 [**FindFiles**](DefaultApi.md#findfiles) | **GET** /files | 
 [**FindGlobalTemplates**](DefaultApi.md#findglobaltemplates) | **GET** /global-templates | 
+[**FindSignatures**](DefaultApi.md#findsignatures) | **GET** /signatures | 
 [**FindSnippets**](DefaultApi.md#findsnippets) | **GET** /snippets | 
 [**FindTemplates**](DefaultApi.md#findtemplates) | **GET** /templates | 
 [**FindUsers**](DefaultApi.md#findusers) | **GET** /users | 
@@ -32,6 +33,7 @@ Method | HTTP request | Description
 [**GetAddressToken**](DefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**GetFile**](DefaultApi.md#getfile) | **GET** /files/{id} | 
 [**GetGlobalTemplate**](DefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+[**GetSignature**](DefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 [**GetSnippet**](DefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 [**GetTemplate**](DefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 [**GetUser**](DefaultApi.md#getuser) | **GET** /users/{id} | 
@@ -1462,6 +1464,78 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="findsignatures"></a>
+# **FindSignatures**
+> List<Signature> FindSignatures (string filter = null, string sort = null, int? offset = null, int? limit = null)
+
+
+
+Gets signatures
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class FindSignaturesExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: jwt
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var filter = filter_example;  // string | A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional) 
+            var sort = sort_example;  // string | A comma-separated list of fields to sort by (optional) 
+            var offset = 56;  // int? | The start offset of the result set (optional) 
+            var limit = 56;  // int? | Max records to return (optional) 
+
+            try
+            {
+                List&lt;Signature&gt; result = apiInstance.FindSignatures(filter, sort, offset, limit);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.FindSignatures: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string**| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
+ **sort** | **string**| A comma-separated list of fields to sort by | [optional] 
+ **offset** | **int?**| The start offset of the result set | [optional] 
+ **limit** | **int?**| Max records to return | [optional] 
+
+### Return type
+
+[**List<Signature>**](Signature.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="findsnippets"></a>
 # **FindSnippets**
 > List<Snippet> FindSnippets (string filter = null, string sort = null, int? offset = null, int? limit = null)
@@ -1925,6 +1999,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GlobalTemplate**](GlobalTemplate.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsignature"></a>
+# **GetSignature**
+> Signature GetSignature (long? id)
+
+
+
+Gets a signature with the specified ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class GetSignatureExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: jwt
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var id = 789;  // long? | ID of signature to get
+
+            try
+            {
+                Signature result = apiInstance.GetSignature(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetSignature: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **long?**| ID of signature to get | 
+
+### Return type
+
+[**Signature**](Signature.md)
 
 ### Authorization
 
