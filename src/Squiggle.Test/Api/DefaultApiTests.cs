@@ -145,7 +145,8 @@ namespace Squiggle.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //instance.DeleteAddress(id);
+            //bool? force = null;
+            //instance.DeleteAddress(id, force);
             
         }
         
@@ -169,7 +170,8 @@ namespace Squiggle.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //instance.DeleteGlobalTemplate(id);
+            //bool? force = null;
+            //instance.DeleteGlobalTemplate(id, force);
             
         }
         
@@ -181,7 +183,8 @@ namespace Squiggle.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //instance.DeleteSnippet(id);
+            //bool? force = null;
+            //instance.DeleteSnippet(id, force);
             
         }
         
@@ -193,7 +196,8 @@ namespace Squiggle.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //instance.DeleteTemplate(id);
+            //bool? force = null;
+            //instance.DeleteTemplate(id, force);
             
         }
         
@@ -205,7 +209,8 @@ namespace Squiggle.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //instance.DeleteUser(id);
+            //bool? force = null;
+            //instance.DeleteUser(id, force);
             
         }
         
@@ -295,9 +300,11 @@ namespace Squiggle.Test
         public void FindAddressesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
             //int? offset = null;
             //int? limit = null;
-            //var response = instance.FindAddresses(offset, limit);
+            //var response = instance.FindAddresses(filter, sort, offset, limit);
             //Assert.IsInstanceOf<List<Address>> (response, "response is List<Address>");
         }
         
@@ -308,9 +315,11 @@ namespace Squiggle.Test
         public void FindFilesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
             //int? offset = null;
             //int? limit = null;
-            //var response = instance.FindFiles(offset, limit);
+            //var response = instance.FindFiles(filter, sort, offset, limit);
             //Assert.IsInstanceOf<List<FileObject>> (response, "response is List<FileObject>");
         }
         
@@ -321,10 +330,27 @@ namespace Squiggle.Test
         public void FindGlobalTemplatesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
             //int? offset = null;
             //int? limit = null;
-            //var response = instance.FindGlobalTemplates(offset, limit);
+            //var response = instance.FindGlobalTemplates(filter, sort, offset, limit);
             //Assert.IsInstanceOf<List<GlobalTemplate>> (response, "response is List<GlobalTemplate>");
+        }
+        
+        /// <summary>
+        /// Test FindSignatures
+        /// </summary>
+        [Test]
+        public void FindSignaturesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
+            //int? offset = null;
+            //int? limit = null;
+            //var response = instance.FindSignatures(filter, sort, offset, limit);
+            //Assert.IsInstanceOf<List<Signature>> (response, "response is List<Signature>");
         }
         
         /// <summary>
@@ -334,9 +360,11 @@ namespace Squiggle.Test
         public void FindSnippetsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
             //int? offset = null;
             //int? limit = null;
-            //var response = instance.FindSnippets(offset, limit);
+            //var response = instance.FindSnippets(filter, sort, offset, limit);
             //Assert.IsInstanceOf<List<Snippet>> (response, "response is List<Snippet>");
         }
         
@@ -347,9 +375,11 @@ namespace Squiggle.Test
         public void FindTemplatesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
             //int? offset = null;
             //int? limit = null;
-            //var response = instance.FindTemplates(offset, limit);
+            //var response = instance.FindTemplates(filter, sort, offset, limit);
             //Assert.IsInstanceOf<List<Template>> (response, "response is List<Template>");
         }
         
@@ -360,10 +390,24 @@ namespace Squiggle.Test
         public void FindUsersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string filter = null;
+            //string sort = null;
             //int? offset = null;
             //int? limit = null;
-            //var response = instance.FindUsers(offset, limit);
+            //var response = instance.FindUsers(filter, sort, offset, limit);
             //Assert.IsInstanceOf<List<User>> (response, "response is List<User>");
+        }
+        
+        /// <summary>
+        /// Test GenerateAddressAuthCode
+        /// </summary>
+        [Test]
+        public void GenerateAddressAuthCodeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //long? id = null;
+            //var response = instance.GenerateAddressAuthCode(id);
+            //Assert.IsInstanceOf<AuthCode> (response, "response is AuthCode");
         }
         
         /// <summary>
@@ -387,7 +431,7 @@ namespace Squiggle.Test
             // TODO uncomment below to test the method and replace null with proper value
             //LoginDetails data = null;
             //var response = instance.GetAddressToken(data);
-            //Assert.IsInstanceOf<JSONWebTokenResponse> (response, "response is JSONWebTokenResponse");
+            //Assert.IsInstanceOf<JSONWebToken> (response, "response is JSONWebToken");
         }
         
         /// <summary>
@@ -412,6 +456,18 @@ namespace Squiggle.Test
             //long? id = null;
             //var response = instance.GetGlobalTemplate(id);
             //Assert.IsInstanceOf<GlobalTemplate> (response, "response is GlobalTemplate");
+        }
+        
+        /// <summary>
+        /// Test GetSignature
+        /// </summary>
+        [Test]
+        public void GetSignatureTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //long? id = null;
+            //var response = instance.GetSignature(id);
+            //Assert.IsInstanceOf<Signature> (response, "response is Signature");
         }
         
         /// <summary>
@@ -459,7 +515,7 @@ namespace Squiggle.Test
             // TODO uncomment below to test the method and replace null with proper value
             //LoginDetails data = null;
             //var response = instance.GetUserToken(data);
-            //Assert.IsInstanceOf<JSONWebTokenResponse> (response, "response is JSONWebTokenResponse");
+            //Assert.IsInstanceOf<JSONWebToken> (response, "response is JSONWebToken");
         }
         
     }

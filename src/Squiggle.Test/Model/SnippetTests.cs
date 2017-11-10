@@ -73,14 +73,6 @@ namespace Squiggle.Test
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'User'
-        /// </summary>
-        [Test]
-        public void UserTest()
-        {
-            // TODO unit test for the property 'User'
-        }
-        /// <summary>
         /// Test the property 'ContentHtml'
         /// </summary>
         [Test]

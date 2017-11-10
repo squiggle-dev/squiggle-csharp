@@ -169,20 +169,20 @@ namespace Squiggle.Test
             // TODO unit test for the property 'Googleplus'
         }
         /// <summary>
+        /// Test the property 'Template'
+        /// </summary>
+        [Test]
+        public void TemplateTest()
+        {
+            // TODO unit test for the property 'Template'
+        }
+        /// <summary>
         /// Test the property 'Signatures'
         /// </summary>
         [Test]
         public void SignaturesTest()
         {
             // TODO unit test for the property 'Signatures'
-        }
-        /// <summary>
-        /// Test the property 'User'
-        /// </summary>
-        [Test]
-        public void UserTest()
-        {
-            // TODO unit test for the property 'User'
         }
         /// <summary>
         /// Test the property 'CreatedAt'

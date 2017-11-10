@@ -81,14 +81,6 @@ namespace Squiggle.Test
             // TODO unit test for the property 'Label'
         }
         /// <summary>
-        /// Test the property 'Template'
-        /// </summary>
-        [Test]
-        public void TemplateTest()
-        {
-            // TODO unit test for the property 'Template'
-        }
-        /// <summary>
         /// Test the property 'Plain'
         /// </summary>
         [Test]
@@ -103,6 +95,22 @@ namespace Squiggle.Test
         public void HtmlTest()
         {
             // TODO unit test for the property 'Html'
+        }
+        /// <summary>
+        /// Test the property 'Address'
+        /// </summary>
+        [Test]
+        public void AddressTest()
+        {
+            // TODO unit test for the property 'Address'
+        }
+        /// <summary>
+        /// Test the property 'Template'
+        /// </summary>
+        [Test]
+        public void TemplateTest()
+        {
+            // TODO unit test for the property 'Template'
         }
         /// <summary>
         /// Test the property 'Errors'

@@ -233,6 +233,22 @@ namespace Squiggle.Test
             // TODO unit test for the property 'Snippet'
         }
         /// <summary>
+        /// Test the property 'Template'
+        /// </summary>
+        [Test]
+        public void TemplateTest()
+        {
+            // TODO unit test for the property 'Template'
+        }
+        /// <summary>
+        /// Test the property 'SnippetEnabled'
+        /// </summary>
+        [Test]
+        public void SnippetEnabledTest()
+        {
+            // TODO unit test for the property 'SnippetEnabled'
+        }
+        /// <summary>
         /// Test the property 'SecretKey'
         /// </summary>
         [Test]

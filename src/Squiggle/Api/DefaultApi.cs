@@ -621,6 +621,27 @@ namespace Squiggle.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Generates a one-time auth code for an address
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of address</param>
+        /// <returns>AuthCode</returns>
+        AuthCode GenerateAddressAuthCode (long? id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Generates a one-time auth code for an address
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of address</param>
+        /// <returns>ApiResponse of AuthCode</returns>
+        ApiResponse<AuthCode> GenerateAddressAuthCodeWithHttpInfo (long? id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Gets an address with the specified ID
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3000,6 +3021,83 @@ namespace Squiggle.Api
             return new ApiResponse<List<User>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
+            
+        }
+
+        /// <summary>
+        ///  Generates a one-time auth code for an address
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of address</param>
+        /// <returns>AuthCode</returns>
+        public AuthCode GenerateAddressAuthCode (long? id)
+        {
+             ApiResponse<AuthCode> localVarResponse = GenerateAddressAuthCodeWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Generates a one-time auth code for an address
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of address</param>
+        /// <returns>ApiResponse of AuthCode</returns>
+        public ApiResponse< AuthCode > GenerateAddressAuthCodeWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DefaultApi->GenerateAddressAuthCode");
+
+            var localVarPath = "/addresses/{id}/generate-auth-code";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (jwt) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GenerateAddressAuthCode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AuthCode>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (AuthCode) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AuthCode)));
             
         }
 

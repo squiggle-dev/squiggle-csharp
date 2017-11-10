@@ -1,9 +1,10 @@
-# Squiggle.Model.JSONWebTokenResponse
+# Squiggle.Model.AuthCode
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**JSONWebToken**](JSONWebToken.md) |  | [optional] 
+**Code** | **string** |  | [optional] 
+**CodeExpiry** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
