@@ -29,7 +29,8 @@ Method | HTTP request | Description
 [**FindSnippets**](DefaultApi.md#findsnippets) | **GET** /snippets | 
 [**FindTemplates**](DefaultApi.md#findtemplates) | **GET** /templates | 
 [**FindUsers**](DefaultApi.md#findusers) | **GET** /users | 
-[**GenerateAddressAuthCode**](DefaultApi.md#generateaddressauthcode) | **POST** /addresses/{id}/generate-auth-code | 
+[**GenerateAddressAuthCode**](DefaultApi.md#generateaddressauthcode) | **POST** /addresses/generate-auth-code | 
+[**GenerateAddressAuthCodeById**](DefaultApi.md#generateaddressauthcodebyid) | **POST** /addresses/generate-auth-code/{id} | 
 [**GetAddress**](DefaultApi.md#getaddress) | **GET** /addresses/{id} | 
 [**GetAddressToken**](DefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**GetFile**](DefaultApi.md#getfile) | **GET** /files/{id} | 
@@ -1755,7 +1756,7 @@ Name | Type | Description  | Notes
 
 <a name="generateaddressauthcode"></a>
 # **GenerateAddressAuthCode**
-> AuthCode GenerateAddressAuthCode (long? id)
+> void GenerateAddressAuthCode (AuthCodeRequest data)
 
 
 
@@ -1776,6 +1777,66 @@ namespace Example
         public void main()
         {
             
+            var apiInstance = new DefaultApi();
+            var data = new AuthCodeRequest(); // AuthCodeRequest | 
+
+            try
+            {
+                apiInstance.GenerateAddressAuthCode(data);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GenerateAddressAuthCode: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**AuthCodeRequest**](AuthCodeRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="generateaddressauthcodebyid"></a>
+# **GenerateAddressAuthCodeById**
+> AuthCode GenerateAddressAuthCodeById (long? id)
+
+
+
+Generates a one-time auth code for an address
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class GenerateAddressAuthCodeByIdExample
+    {
+        public void main()
+        {
+            
             // Configure API key authorization: jwt
             Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1786,12 +1847,12 @@ namespace Example
 
             try
             {
-                AuthCode result = apiInstance.GenerateAddressAuthCode(id);
+                AuthCode result = apiInstance.GenerateAddressAuthCodeById(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.GenerateAddressAuthCode: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.GenerateAddressAuthCodeById: " + e.Message );
             }
         }
     }

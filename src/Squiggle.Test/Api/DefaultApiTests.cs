@@ -405,8 +405,20 @@ namespace Squiggle.Test
         public void GenerateAddressAuthCodeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //AuthCodeRequest data = null;
+            //instance.GenerateAddressAuthCode(data);
+            
+        }
+        
+        /// <summary>
+        /// Test GenerateAddressAuthCodeById
+        /// </summary>
+        [Test]
+        public void GenerateAddressAuthCodeByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //var response = instance.GenerateAddressAuthCode(id);
+            //var response = instance.GenerateAddressAuthCodeById(id);
             //Assert.IsInstanceOf<AuthCode> (response, "response is AuthCode");
         }
         

@@ -73,6 +73,22 @@ namespace Squiggle.Test
             // TODO unit test for the property 'Id'
         }
         /// <summary>
+        /// Test the property 'Status'
+        /// </summary>
+        [Test]
+        public void StatusTest()
+        {
+            // TODO unit test for the property 'Status'
+        }
+        /// <summary>
+        /// Test the property 'WebhookUrl'
+        /// </summary>
+        [Test]
+        public void WebhookUrlTest()
+        {
+            // TODO unit test for the property 'WebhookUrl'
+        }
+        /// <summary>
         /// Test the property 'Email'
         /// </summary>
         [Test]

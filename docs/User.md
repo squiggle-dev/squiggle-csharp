@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
+**Status** | **string** |  | [optional] 
+**WebhookUrl** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **CompanyName** | **string** |  | [optional] 
 **FirstName** | **string** |  | [optional] 

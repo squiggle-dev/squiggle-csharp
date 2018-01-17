@@ -32,6 +32,8 @@ namespace Squiggle.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
+        /// <param name="Status">Status.</param>
+        /// <param name="WebhookUrl">WebhookUrl.</param>
         /// <param name="Email">Email.</param>
         /// <param name="CompanyName">CompanyName.</param>
         /// <param name="FirstName">FirstName.</param>
@@ -54,8 +56,10 @@ namespace Squiggle.Model
         /// <param name="Snippet">Snippet.</param>
         /// <param name="Template">Template.</param>
         /// <param name="SnippetEnabled">SnippetEnabled.</param>
-        public User(string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, FileObject Logo = null, Snippet Snippet = null, int? Template = null, bool? SnippetEnabled = null)
+        public User(string Status = null, string WebhookUrl = null, string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, FileObject Logo = null, Snippet Snippet = null, int? Template = null, bool? SnippetEnabled = null)
         {
+            this.Status = Status;
+            this.WebhookUrl = WebhookUrl;
             this.Email = Email;
             this.CompanyName = CompanyName;
             this.FirstName = FirstName;
@@ -85,6 +89,16 @@ namespace Squiggle.Model
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public int? Id { get; private set; }
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
+        /// <summary>
+        /// Gets or Sets WebhookUrl
+        /// </summary>
+        [DataMember(Name="webhook_url", EmitDefaultValue=false)]
+        public string WebhookUrl { get; set; }
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
@@ -224,6 +238,8 @@ namespace Squiggle.Model
             var sb = new StringBuilder();
             sb.Append("class User {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  WebhookUrl: ").Append(WebhookUrl).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
@@ -290,6 +306,16 @@ namespace Squiggle.Model
                     this.Id == other.Id ||
                     this.Id != null &&
                     this.Id.Equals(other.Id)
+                ) && 
+                (
+                    this.Status == other.Status ||
+                    this.Status != null &&
+                    this.Status.Equals(other.Status)
+                ) && 
+                (
+                    this.WebhookUrl == other.WebhookUrl ||
+                    this.WebhookUrl != null &&
+                    this.WebhookUrl.Equals(other.WebhookUrl)
                 ) && 
                 (
                     this.Email == other.Email ||
@@ -436,6 +462,10 @@ namespace Squiggle.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Id != null)
                     hash = hash * 59 + this.Id.GetHashCode();
+                if (this.Status != null)
+                    hash = hash * 59 + this.Status.GetHashCode();
+                if (this.WebhookUrl != null)
+                    hash = hash * 59 + this.WebhookUrl.GetHashCode();
                 if (this.Email != null)
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.CompanyName != null)
