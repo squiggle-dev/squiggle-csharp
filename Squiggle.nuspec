@@ -9,7 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Squiggle API C# wrapper</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2019</copyright>
     <tags>Squiggle</tags>
   </metadata>
 </package>
