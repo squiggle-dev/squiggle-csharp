@@ -32,9 +32,10 @@ namespace Squiggle.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FileObject" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        public FileObject()
+        /// <param name="Metadata">Metadata.</param>
+        public FileObject(Object Metadata = null)
         {
+            this.Metadata = Metadata;
         }
         
         /// <summary>
@@ -53,10 +54,20 @@ namespace Squiggle.Model
         [DataMember(Name="src", EmitDefaultValue=false)]
         public string Src { get; private set; }
         /// <summary>
+        /// Gets or Sets MimeType
+        /// </summary>
+        [DataMember(Name="mime_type", EmitDefaultValue=false)]
+        public string MimeType { get; private set; }
+        /// <summary>
         /// Gets or Sets Size
         /// </summary>
         [DataMember(Name="size", EmitDefaultValue=false)]
         public int? Size { get; private set; }
+        /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        public Object Metadata { get; set; }
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
@@ -78,7 +89,9 @@ namespace Squiggle.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Src: ").Append(Src).Append("\n");
+            sb.Append("  MimeType: ").Append(MimeType).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -133,9 +146,19 @@ namespace Squiggle.Model
                     this.Src.Equals(other.Src)
                 ) && 
                 (
+                    this.MimeType == other.MimeType ||
+                    this.MimeType != null &&
+                    this.MimeType.Equals(other.MimeType)
+                ) && 
+                (
                     this.Size == other.Size ||
                     this.Size != null &&
                     this.Size.Equals(other.Size)
+                ) && 
+                (
+                    this.Metadata == other.Metadata ||
+                    this.Metadata != null &&
+                    this.Metadata.Equals(other.Metadata)
                 ) && 
                 (
                     this.CreatedAt == other.CreatedAt ||
@@ -166,8 +189,12 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Src != null)
                     hash = hash * 59 + this.Src.GetHashCode();
+                if (this.MimeType != null)
+                    hash = hash * 59 + this.MimeType.GetHashCode();
                 if (this.Size != null)
                     hash = hash * 59 + this.Size.GetHashCode();
+                if (this.Metadata != null)
+                    hash = hash * 59 + this.Metadata.GetHashCode();
                 if (this.CreatedAt != null)
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null)

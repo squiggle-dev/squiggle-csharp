@@ -49,6 +49,11 @@ namespace Squiggle.Model
         [DataMember(Name="label", EmitDefaultValue=false)]
         public string Label { get; private set; }
         /// <summary>
+        /// Gets or Sets Preview
+        /// </summary>
+        [DataMember(Name="preview", EmitDefaultValue=false)]
+        public string Preview { get; private set; }
+        /// <summary>
         /// Gets or Sets Plain
         /// </summary>
         [DataMember(Name="plain", EmitDefaultValue=false)]
@@ -83,6 +88,7 @@ namespace Squiggle.Model
             sb.Append("class Signature {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Preview: ").Append(Preview).Append("\n");
             sb.Append("  Plain: ").Append(Plain).Append("\n");
             sb.Append("  Html: ").Append(Html).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
@@ -135,6 +141,11 @@ namespace Squiggle.Model
                     this.Label.Equals(other.Label)
                 ) && 
                 (
+                    this.Preview == other.Preview ||
+                    this.Preview != null &&
+                    this.Preview.Equals(other.Preview)
+                ) && 
+                (
                     this.Plain == other.Plain ||
                     this.Plain != null &&
                     this.Plain.Equals(other.Plain)
@@ -176,6 +187,8 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Label != null)
                     hash = hash * 59 + this.Label.GetHashCode();
+                if (this.Preview != null)
+                    hash = hash * 59 + this.Preview.GetHashCode();
                 if (this.Plain != null)
                     hash = hash * 59 + this.Plain.GetHashCode();
                 if (this.Html != null)

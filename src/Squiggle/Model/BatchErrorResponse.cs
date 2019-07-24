@@ -24,28 +24,28 @@ using System.ComponentModel.DataAnnotations;
 namespace Squiggle.Model
 {
     /// <summary>
-    /// UnexpectedErrorResponse
+    /// BatchErrorResponse
     /// </summary>
     [DataContract]
-    public partial class UnexpectedErrorResponse :  IEquatable<UnexpectedErrorResponse>, IValidatableObject
+    public partial class BatchErrorResponse :  IEquatable<BatchErrorResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UnexpectedErrorResponse" /> class.
+        /// Initializes a new instance of the <see cref="BatchErrorResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected UnexpectedErrorResponse() { }
+        protected BatchErrorResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UnexpectedErrorResponse" /> class.
+        /// Initializes a new instance of the <see cref="BatchErrorResponse" /> class.
         /// </summary>
         /// <param name="Code">Code.</param>
         /// <param name="Message">Message (required).</param>
         /// <param name="Errors">Errors (required).</param>
-        public UnexpectedErrorResponse(int? Code = null, string Message = null, Dictionary<string, string> Errors = null)
+        public BatchErrorResponse(int? Code = null, string Message = null, Dictionary<string, UnexpectedErrorResponse> Errors = null)
         {
             // to ensure "Message" is required (not null)
             if (Message == null)
             {
-                throw new InvalidDataException("Message is a required property for UnexpectedErrorResponse and cannot be null");
+                throw new InvalidDataException("Message is a required property for BatchErrorResponse and cannot be null");
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Squiggle.Model
             // to ensure "Errors" is required (not null)
             if (Errors == null)
             {
-                throw new InvalidDataException("Errors is a required property for UnexpectedErrorResponse and cannot be null");
+                throw new InvalidDataException("Errors is a required property for BatchErrorResponse and cannot be null");
             }
             else
             {
@@ -77,7 +77,7 @@ namespace Squiggle.Model
         /// Gets or Sets Errors
         /// </summary>
         [DataMember(Name="errors", EmitDefaultValue=false)]
-        public Dictionary<string, string> Errors { get; set; }
+        public Dictionary<string, UnexpectedErrorResponse> Errors { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -85,7 +85,7 @@ namespace Squiggle.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UnexpectedErrorResponse {\n");
+            sb.Append("class BatchErrorResponse {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
@@ -110,15 +110,15 @@ namespace Squiggle.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UnexpectedErrorResponse);
+            return this.Equals(obj as BatchErrorResponse);
         }
 
         /// <summary>
-        /// Returns true if UnexpectedErrorResponse instances are equal
+        /// Returns true if BatchErrorResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of UnexpectedErrorResponse to be compared</param>
+        /// <param name="other">Instance of BatchErrorResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UnexpectedErrorResponse other)
+        public bool Equals(BatchErrorResponse other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)

@@ -52,11 +52,12 @@ namespace Squiggle.Model
         /// <param name="Twitter">Twitter.</param>
         /// <param name="Instagram">Instagram.</param>
         /// <param name="Googleplus">Googleplus.</param>
+        /// <param name="AdditionalText">AdditionalText.</param>
         /// <param name="Logo">Logo.</param>
         /// <param name="Snippet">Snippet.</param>
         /// <param name="Template">Template.</param>
         /// <param name="SnippetEnabled">SnippetEnabled.</param>
-        public User(string Status = null, string WebhookUrl = null, string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, FileObject Logo = null, Snippet Snippet = null, int? Template = null, bool? SnippetEnabled = null)
+        public User(string Status = null, string WebhookUrl = null, string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, string AdditionalText = null, FileObject Logo = null, Snippet Snippet = null, int? Template = null, bool? SnippetEnabled = null)
         {
             this.Status = Status;
             this.WebhookUrl = WebhookUrl;
@@ -78,6 +79,7 @@ namespace Squiggle.Model
             this.Twitter = Twitter;
             this.Instagram = Instagram;
             this.Googleplus = Googleplus;
+            this.AdditionalText = AdditionalText;
             this.Logo = Logo;
             this.Snippet = Snippet;
             this.Template = Template;
@@ -190,6 +192,11 @@ namespace Squiggle.Model
         [DataMember(Name="googleplus", EmitDefaultValue=false)]
         public string Googleplus { get; set; }
         /// <summary>
+        /// Gets or Sets AdditionalText
+        /// </summary>
+        [DataMember(Name="additional_text", EmitDefaultValue=false)]
+        public string AdditionalText { get; set; }
+        /// <summary>
         /// Gets or Sets Logo
         /// </summary>
         [DataMember(Name="logo", EmitDefaultValue=false)]
@@ -204,6 +211,11 @@ namespace Squiggle.Model
         /// </summary>
         [DataMember(Name="template", EmitDefaultValue=false)]
         public int? Template { get; set; }
+        /// <summary>
+        /// Gets or Sets AddressCount
+        /// </summary>
+        [DataMember(Name="address_count", EmitDefaultValue=false)]
+        public int? AddressCount { get; private set; }
         /// <summary>
         /// Gets or Sets SnippetEnabled
         /// </summary>
@@ -258,9 +270,11 @@ namespace Squiggle.Model
             sb.Append("  Twitter: ").Append(Twitter).Append("\n");
             sb.Append("  Instagram: ").Append(Instagram).Append("\n");
             sb.Append("  Googleplus: ").Append(Googleplus).Append("\n");
+            sb.Append("  AdditionalText: ").Append(AdditionalText).Append("\n");
             sb.Append("  Logo: ").Append(Logo).Append("\n");
             sb.Append("  Snippet: ").Append(Snippet).Append("\n");
             sb.Append("  Template: ").Append(Template).Append("\n");
+            sb.Append("  AddressCount: ").Append(AddressCount).Append("\n");
             sb.Append("  SnippetEnabled: ").Append(SnippetEnabled).Append("\n");
             sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
             sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
@@ -408,6 +422,11 @@ namespace Squiggle.Model
                     this.Googleplus.Equals(other.Googleplus)
                 ) && 
                 (
+                    this.AdditionalText == other.AdditionalText ||
+                    this.AdditionalText != null &&
+                    this.AdditionalText.Equals(other.AdditionalText)
+                ) && 
+                (
                     this.Logo == other.Logo ||
                     this.Logo != null &&
                     this.Logo.Equals(other.Logo)
@@ -421,6 +440,11 @@ namespace Squiggle.Model
                     this.Template == other.Template ||
                     this.Template != null &&
                     this.Template.Equals(other.Template)
+                ) && 
+                (
+                    this.AddressCount == other.AddressCount ||
+                    this.AddressCount != null &&
+                    this.AddressCount.Equals(other.AddressCount)
                 ) && 
                 (
                     this.SnippetEnabled == other.SnippetEnabled ||
@@ -502,12 +526,16 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Instagram.GetHashCode();
                 if (this.Googleplus != null)
                     hash = hash * 59 + this.Googleplus.GetHashCode();
+                if (this.AdditionalText != null)
+                    hash = hash * 59 + this.AdditionalText.GetHashCode();
                 if (this.Logo != null)
                     hash = hash * 59 + this.Logo.GetHashCode();
                 if (this.Snippet != null)
                     hash = hash * 59 + this.Snippet.GetHashCode();
                 if (this.Template != null)
                     hash = hash * 59 + this.Template.GetHashCode();
+                if (this.AddressCount != null)
+                    hash = hash * 59 + this.AddressCount.GetHashCode();
                 if (this.SnippetEnabled != null)
                     hash = hash * 59 + this.SnippetEnabled.GetHashCode();
                 if (this.SecretKey != null)

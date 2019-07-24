@@ -49,6 +49,27 @@ namespace Squiggle.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Creates multiple new addresses
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns>Dictionary&lt;string, Address&gt;</returns>
+        Dictionary<string, Address> AddAddressBatch (List<Address> data);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Creates multiple new addresses
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns>ApiResponse of Dictionary&lt;string, Address&gt;</returns>
+        ApiResponse<Dictionary<string, Address>> AddAddressBatchWithHttpInfo (List<Address> data);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Upload a new file
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1041,6 +1062,90 @@ namespace Squiggle.Api
             return new ApiResponse<Address>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Address) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Address)));
+            
+        }
+
+        /// <summary>
+        ///  Creates multiple new addresses
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns>Dictionary&lt;string, Address&gt;</returns>
+        public Dictionary<string, Address> AddAddressBatch (List<Address> data)
+        {
+             ApiResponse<Dictionary<string, Address>> localVarResponse = AddAddressBatchWithHttpInfo(data);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Creates multiple new addresses
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns>ApiResponse of Dictionary&lt;string, Address&gt;</returns>
+        public ApiResponse< Dictionary<string, Address> > AddAddressBatchWithHttpInfo (List<Address> data)
+        {
+            // verify the required parameter 'data' is set
+            if (data == null)
+                throw new ApiException(400, "Missing required parameter 'data' when calling DefaultApi->AddAddressBatch");
+
+            var localVarPath = "/addresses/batch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+            // authentication (jwt) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddAddressBatch", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Address>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Dictionary<string, Address>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Address>)));
             
         }
 

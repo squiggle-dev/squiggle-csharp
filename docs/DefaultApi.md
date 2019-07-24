@@ -5,6 +5,7 @@ All URIs are relative to *http://api.squigglesignatures.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddAddress**](DefaultApi.md#addaddress) | **POST** /addresses | 
+[**AddAddressBatch**](DefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
 [**AddFile**](DefaultApi.md#addfile) | **POST** /files | 
 [**AddGlobalTemplate**](DefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 [**AddSnippet**](DefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -96,6 +97,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Address**](Address.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="addaddressbatch"></a>
+# **AddAddressBatch**
+> Dictionary<string, Address> AddAddressBatch (List<Address> data)
+
+
+
+Creates multiple new addresses
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class AddAddressBatchExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: jwt
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var data = new List<Address>(); // List<Address> | 
+
+            try
+            {
+                Dictionary&lt;string, Address&gt; result = apiInstance.AddAddressBatch(data);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.AddAddressBatch: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**List<Address>**](Address.md)|  | 
+
+### Return type
+
+[**Dictionary<string, Address>**](Address.md)
 
 ### Authorization
 
