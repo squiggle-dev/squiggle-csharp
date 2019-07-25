@@ -54,6 +54,16 @@ namespace Squiggle.Model
         [DataMember(Name="preview", EmitDefaultValue=false)]
         public string Preview { get; private set; }
         /// <summary>
+        /// Gets or Sets PreviewWidth
+        /// </summary>
+        [DataMember(Name="preview_width", EmitDefaultValue=false)]
+        public int? PreviewWidth { get; private set; }
+        /// <summary>
+        /// Gets or Sets PreviewHeight
+        /// </summary>
+        [DataMember(Name="preview_height", EmitDefaultValue=false)]
+        public int? PreviewHeight { get; private set; }
+        /// <summary>
         /// Gets or Sets Plain
         /// </summary>
         [DataMember(Name="plain", EmitDefaultValue=false)]
@@ -89,6 +99,8 @@ namespace Squiggle.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Preview: ").Append(Preview).Append("\n");
+            sb.Append("  PreviewWidth: ").Append(PreviewWidth).Append("\n");
+            sb.Append("  PreviewHeight: ").Append(PreviewHeight).Append("\n");
             sb.Append("  Plain: ").Append(Plain).Append("\n");
             sb.Append("  Html: ").Append(Html).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
@@ -146,6 +158,16 @@ namespace Squiggle.Model
                     this.Preview.Equals(other.Preview)
                 ) && 
                 (
+                    this.PreviewWidth == other.PreviewWidth ||
+                    this.PreviewWidth != null &&
+                    this.PreviewWidth.Equals(other.PreviewWidth)
+                ) && 
+                (
+                    this.PreviewHeight == other.PreviewHeight ||
+                    this.PreviewHeight != null &&
+                    this.PreviewHeight.Equals(other.PreviewHeight)
+                ) && 
+                (
                     this.Plain == other.Plain ||
                     this.Plain != null &&
                     this.Plain.Equals(other.Plain)
@@ -189,6 +211,10 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Label.GetHashCode();
                 if (this.Preview != null)
                     hash = hash * 59 + this.Preview.GetHashCode();
+                if (this.PreviewWidth != null)
+                    hash = hash * 59 + this.PreviewWidth.GetHashCode();
+                if (this.PreviewHeight != null)
+                    hash = hash * 59 + this.PreviewHeight.GetHashCode();
                 if (this.Plain != null)
                     hash = hash * 59 + this.Plain.GetHashCode();
                 if (this.Html != null)

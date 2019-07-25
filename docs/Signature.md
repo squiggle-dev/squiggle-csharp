@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **Id** | **int?** |  | [optional] 
 **Label** | **string** |  | [optional] 
 **Preview** | **string** |  | [optional] 
+**PreviewWidth** | **int?** |  | [optional] 
+**PreviewHeight** | **int?** |  | [optional] 
 **Plain** | **string** |  | [optional] 
 **Html** | **string** |  | [optional] 
 **Address** | **int?** |  | [optional] 
