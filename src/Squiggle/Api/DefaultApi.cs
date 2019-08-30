@@ -70,6 +70,27 @@ namespace Squiggle.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Registers a client against an address
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        void AddClient (ModelClient data);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Registers a client against an address
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AddClientWithHttpInfo (ModelClient data);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Upload a new file
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -768,6 +789,33 @@ namespace Squiggle.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Gets an image, resizes if necessary and returns the resulting url and dimensions
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of file to get</param>
+        /// <param name="width">Image resize width (optional)</param>
+        /// <param name="height">Image resize height (optional)</param>
+        /// <param name="mode">Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified (optional, default to fit)</param>
+        /// <returns>ImageInfo</returns>
+        ImageInfo GetImage (long? id, int? width = null, int? height = null, string mode = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets an image, resizes if necessary and returns the resulting url and dimensions
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of file to get</param>
+        /// <param name="width">Image resize width (optional)</param>
+        /// <param name="height">Image resize height (optional)</param>
+        /// <param name="mode">Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified (optional, default to fit)</param>
+        /// <returns>ApiResponse of ImageInfo</returns>
+        ApiResponse<ImageInfo> GetImageWithHttpInfo (long? id, int? width = null, int? height = null, string mode = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Gets a signature with the specified ID
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -869,6 +917,27 @@ namespace Squiggle.Api
         /// <param name="data"></param>
         /// <returns>ApiResponse of JSONWebToken</returns>
         ApiResponse<JSONWebToken> GetUserTokenWithHttpInfo (LoginDetails data);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Renders a template
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="opts"></param>
+        /// <returns></returns>
+        void Render (RenderOptions opts);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Renders a template
+        /// </remarks>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="opts"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RenderWithHttpInfo (RenderOptions opts);
         #endregion Synchronous Operations
     }
 
@@ -1147,6 +1216,83 @@ namespace Squiggle.Api
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Dictionary<string, Address>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Address>)));
             
+        }
+
+        /// <summary>
+        ///  Registers a client against an address
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public void AddClient (ModelClient data)
+        {
+             AddClientWithHttpInfo(data);
+        }
+
+        /// <summary>
+        ///  Registers a client against an address
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="data"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AddClientWithHttpInfo (ModelClient data)
+        {
+            // verify the required parameter 'data' is set
+            if (data == null)
+                throw new ApiException(400, "Missing required parameter 'data' when calling DefaultApi->AddClient");
+
+            var localVarPath = "/clients";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (data != null && data.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(data); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = data; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddClient", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -3614,6 +3760,92 @@ namespace Squiggle.Api
         }
 
         /// <summary>
+        ///  Gets an image, resizes if necessary and returns the resulting url and dimensions
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of file to get</param>
+        /// <param name="width">Image resize width (optional)</param>
+        /// <param name="height">Image resize height (optional)</param>
+        /// <param name="mode">Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified (optional, default to fit)</param>
+        /// <returns>ImageInfo</returns>
+        public ImageInfo GetImage (long? id, int? width = null, int? height = null, string mode = null)
+        {
+             ApiResponse<ImageInfo> localVarResponse = GetImageWithHttpInfo(id, width, height, mode);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets an image, resizes if necessary and returns the resulting url and dimensions
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of file to get</param>
+        /// <param name="width">Image resize width (optional)</param>
+        /// <param name="height">Image resize height (optional)</param>
+        /// <param name="mode">Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified (optional, default to fit)</param>
+        /// <returns>ApiResponse of ImageInfo</returns>
+        public ApiResponse< ImageInfo > GetImageWithHttpInfo (long? id, int? width = null, int? height = null, string mode = null)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling DefaultApi->GetImage");
+
+            var localVarPath = "/image/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (width != null) localVarQueryParams.Add("width", Configuration.ApiClient.ParameterToString(width)); // query parameter
+            if (height != null) localVarQueryParams.Add("height", Configuration.ApiClient.ParameterToString(height)); // query parameter
+            if (mode != null) localVarQueryParams.Add("mode", Configuration.ApiClient.ParameterToString(mode)); // query parameter
+
+            // authentication (jwt) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetImage", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ImageInfo>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ImageInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageInfo)));
+            
+        }
+
+        /// <summary>
         ///  Gets a signature with the specified ID
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3997,6 +4229,90 @@ namespace Squiggle.Api
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (JSONWebToken) Configuration.ApiClient.Deserialize(localVarResponse, typeof(JSONWebToken)));
             
+        }
+
+        /// <summary>
+        ///  Renders a template
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="opts"></param>
+        /// <returns></returns>
+        public void Render (RenderOptions opts)
+        {
+             RenderWithHttpInfo(opts);
+        }
+
+        /// <summary>
+        ///  Renders a template
+        /// </summary>
+        /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="opts"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> RenderWithHttpInfo (RenderOptions opts)
+        {
+            // verify the required parameter 'opts' is set
+            if (opts == null)
+                throw new ApiException(400, "Missing required parameter 'opts' when calling DefaultApi->Render");
+
+            var localVarPath = "/render";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/html", 
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (opts != null && opts.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(opts); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = opts; // byte array
+            }
+
+            // authentication (jwt) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Render", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
     }

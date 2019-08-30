@@ -80,12 +80,13 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://api.squigglesignatures.com/v1*
+All URIs are relative to *http://localhost:8081/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**AddAddress**](docs/DefaultApi.md#addaddress) | **POST** /addresses | 
 *DefaultApi* | [**AddAddressBatch**](docs/DefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
+*DefaultApi* | [**AddClient**](docs/DefaultApi.md#addclient) | **POST** /clients | 
 *DefaultApi* | [**AddFile**](docs/DefaultApi.md#addfile) | **POST** /files | 
 *DefaultApi* | [**AddGlobalTemplate**](docs/DefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 *DefaultApi* | [**AddSnippet**](docs/DefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -116,31 +117,40 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**GetAddressToken**](docs/DefaultApi.md#getaddresstoken) | **POST** /token/address | 
 *DefaultApi* | [**GetFile**](docs/DefaultApi.md#getfile) | **GET** /files/{id} | 
 *DefaultApi* | [**GetGlobalTemplate**](docs/DefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+*DefaultApi* | [**GetImage**](docs/DefaultApi.md#getimage) | **GET** /image/{id} | 
 *DefaultApi* | [**GetSignature**](docs/DefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 *DefaultApi* | [**GetSnippet**](docs/DefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 *DefaultApi* | [**GetTemplate**](docs/DefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 *DefaultApi* | [**GetUser**](docs/DefaultApi.md#getuser) | **GET** /users/{id} | 
 *DefaultApi* | [**GetUserToken**](docs/DefaultApi.md#getusertoken) | **POST** /token/user | 
+*DefaultApi* | [**Render**](docs/DefaultApi.md#render) | **POST** /render | 
 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
  - [Model.Address](docs/Address.md)
+ - [Model.AddressTemplate](docs/AddressTemplate.md)
  - [Model.AuthCode](docs/AuthCode.md)
  - [Model.AuthCodeRequest](docs/AuthCodeRequest.md)
  - [Model.BatchErrorResponse](docs/BatchErrorResponse.md)
  - [Model.FileObject](docs/FileObject.md)
+ - [Model.FileTemplate](docs/FileTemplate.md)
  - [Model.GlobalTemplate](docs/GlobalTemplate.md)
+ - [Model.ImageInfo](docs/ImageInfo.md)
  - [Model.JSONWebToken](docs/JSONWebToken.md)
  - [Model.JsonApiResponse](docs/JsonApiResponse.md)
  - [Model.LoginDetails](docs/LoginDetails.md)
+ - [Model.ModelClient](docs/ModelClient.md)
+ - [Model.RenderOptions](docs/RenderOptions.md)
  - [Model.ResponseLinks](docs/ResponseLinks.md)
  - [Model.Signature](docs/Signature.md)
  - [Model.Snippet](docs/Snippet.md)
+ - [Model.SnippetTemplate](docs/SnippetTemplate.md)
  - [Model.Template](docs/Template.md)
  - [Model.UnexpectedErrorResponse](docs/UnexpectedErrorResponse.md)
  - [Model.User](docs/User.md)
+ - [Model.UserTemplate](docs/UserTemplate.md)
 
 
 <a name="documentation-for-authorization"></a>

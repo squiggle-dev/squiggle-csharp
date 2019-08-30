@@ -1,11 +1,12 @@
 # Squiggle.Api.DefaultApi
 
-All URIs are relative to *http://api.squigglesignatures.com/v1*
+All URIs are relative to *http://localhost:8081/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddAddress**](DefaultApi.md#addaddress) | **POST** /addresses | 
 [**AddAddressBatch**](DefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
+[**AddClient**](DefaultApi.md#addclient) | **POST** /clients | 
 [**AddFile**](DefaultApi.md#addfile) | **POST** /files | 
 [**AddGlobalTemplate**](DefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 [**AddSnippet**](DefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -36,11 +37,13 @@ Method | HTTP request | Description
 [**GetAddressToken**](DefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**GetFile**](DefaultApi.md#getfile) | **GET** /files/{id} | 
 [**GetGlobalTemplate**](DefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+[**GetImage**](DefaultApi.md#getimage) | **GET** /image/{id} | 
 [**GetSignature**](DefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 [**GetSnippet**](DefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 [**GetTemplate**](DefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 [**GetUser**](DefaultApi.md#getuser) | **GET** /users/{id} | 
 [**GetUserToken**](DefaultApi.md#getusertoken) | **POST** /token/user | 
+[**Render**](DefaultApi.md#render) | **POST** /render | 
 
 
 <a name="addaddress"></a>
@@ -167,6 +170,66 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="addclient"></a>
+# **AddClient**
+> void AddClient (ModelClient data)
+
+
+
+Registers a client against an address
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class AddClientExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new DefaultApi();
+            var data = new ModelClient(); // ModelClient | 
+
+            try
+            {
+                apiInstance.AddClient(data);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.AddClient: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**ModelClient**](ModelClient.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -2206,6 +2269,78 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getimage"></a>
+# **GetImage**
+> ImageInfo GetImage (long? id, int? width = null, int? height = null, string mode = null)
+
+
+
+Gets an image, resizes if necessary and returns the resulting url and dimensions
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class GetImageExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: jwt
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var id = 789;  // long? | ID of file to get
+            var width = 56;  // int? | Image resize width (optional) 
+            var height = 56;  // int? | Image resize height (optional) 
+            var mode = mode_example;  // string | Image resize mode ('fit', 'fill' or 'contain'). Default is 'fit'. Only relevant when width or height is specified (optional)  (default to fit)
+
+            try
+            {
+                ImageInfo result = apiInstance.GetImage(id, width, height, mode);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.GetImage: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **long?**| ID of file to get | 
+ **width** | **int?**| Image resize width | [optional] 
+ **height** | **int?**| Image resize height | [optional] 
+ **mode** | **string**| Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified | [optional] [default to fit]
+
+### Return type
+
+[**ImageInfo**](ImageInfo.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getsignature"></a>
 # **GetSignature**
 > Signature GetSignature (long? id)
@@ -2528,6 +2663,71 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="render"></a>
+# **Render**
+> void Render (RenderOptions opts)
+
+
+
+Renders a template
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Squiggle.Api;
+using Squiggle.Client;
+using Squiggle.Model;
+
+namespace Example
+{
+    public class RenderExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: jwt
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var opts = new RenderOptions(); // RenderOptions | 
+
+            try
+            {
+                apiInstance.Render(opts);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.Render: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **opts** | [**RenderOptions**](RenderOptions.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/html, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
