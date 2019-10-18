@@ -925,8 +925,8 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="opts"></param>
-        /// <returns></returns>
-        void Render (RenderOptions opts);
+        /// <returns>string</returns>
+        string Render (RenderOptions opts);
 
         /// <summary>
         /// 
@@ -936,8 +936,8 @@ namespace Squiggle.Api
         /// </remarks>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="opts"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RenderWithHttpInfo (RenderOptions opts);
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> RenderWithHttpInfo (RenderOptions opts);
         #endregion Synchronous Operations
     }
 
@@ -4236,10 +4236,11 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="opts"></param>
-        /// <returns></returns>
-        public void Render (RenderOptions opts)
+        /// <returns>string</returns>
+        public string Render (RenderOptions opts)
         {
-             RenderWithHttpInfo(opts);
+             ApiResponse<string> localVarResponse = RenderWithHttpInfo(opts);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4247,8 +4248,8 @@ namespace Squiggle.Api
         /// </summary>
         /// <exception cref="Squiggle.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="opts"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RenderWithHttpInfo (RenderOptions opts)
+        /// <returns>ApiResponse of string</returns>
+        public ApiResponse< string > RenderWithHttpInfo (RenderOptions opts)
         {
             // verify the required parameter 'opts' is set
             if (opts == null)
@@ -4309,10 +4310,10 @@ namespace Squiggle.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<string>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (string) Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
+            
         }
 
     }

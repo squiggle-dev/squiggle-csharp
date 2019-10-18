@@ -2668,7 +2668,7 @@ No authorization required
 
 <a name="render"></a>
 # **Render**
-> void Render (RenderOptions opts)
+> string Render (RenderOptions opts)
 
 
 
@@ -2699,7 +2699,8 @@ namespace Example
 
             try
             {
-                apiInstance.Render(opts);
+                string result = apiInstance.Render(opts);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
@@ -2718,7 +2719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**string**
 
 ### Authorization
 
