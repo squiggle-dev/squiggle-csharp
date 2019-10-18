@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
 **Status** | **string** |  | [optional] 
+**ShowBranding** | **bool?** |  | [optional] 
 **WebhookUrl** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **CompanyName** | **string** |  | [optional] 

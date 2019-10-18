@@ -33,6 +33,7 @@ namespace Squiggle.Model
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
         /// <param name="Status">Status.</param>
+        /// <param name="ShowBranding">ShowBranding.</param>
         /// <param name="WebhookUrl">WebhookUrl.</param>
         /// <param name="Email">Email.</param>
         /// <param name="CompanyName">CompanyName.</param>
@@ -57,9 +58,10 @@ namespace Squiggle.Model
         /// <param name="Snippet">Snippet.</param>
         /// <param name="Template">Template.</param>
         /// <param name="SnippetEnabled">SnippetEnabled.</param>
-        public User(string Status = null, string WebhookUrl = null, string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, string AdditionalText = null, FileObject Logo = null, Snippet Snippet = null, int? Template = null, bool? SnippetEnabled = null)
+        public User(string Status = null, bool? ShowBranding = null, string WebhookUrl = null, string Email = null, string CompanyName = null, string FirstName = null, string LastName = null, string Domain = null, string Address1 = null, string Address2 = null, string Address3 = null, string AddressCity = null, string AddressPostcode = null, string AddressCountry = null, string Website = null, string Tel = null, string Linkedin = null, string Facebook = null, string Twitter = null, string Instagram = null, string Googleplus = null, string AdditionalText = null, FileObject Logo = null, Snippet Snippet = null, int? Template = null, bool? SnippetEnabled = null)
         {
             this.Status = Status;
+            this.ShowBranding = ShowBranding;
             this.WebhookUrl = WebhookUrl;
             this.Email = Email;
             this.CompanyName = CompanyName;
@@ -96,6 +98,11 @@ namespace Squiggle.Model
         /// </summary>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
+        /// <summary>
+        /// Gets or Sets ShowBranding
+        /// </summary>
+        [DataMember(Name="show_branding", EmitDefaultValue=false)]
+        public bool? ShowBranding { get; set; }
         /// <summary>
         /// Gets or Sets WebhookUrl
         /// </summary>
@@ -251,6 +258,7 @@ namespace Squiggle.Model
             sb.Append("class User {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  ShowBranding: ").Append(ShowBranding).Append("\n");
             sb.Append("  WebhookUrl: ").Append(WebhookUrl).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
@@ -325,6 +333,11 @@ namespace Squiggle.Model
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
+                ) && 
+                (
+                    this.ShowBranding == other.ShowBranding ||
+                    this.ShowBranding != null &&
+                    this.ShowBranding.Equals(other.ShowBranding)
                 ) && 
                 (
                     this.WebhookUrl == other.WebhookUrl ||
@@ -488,6 +501,8 @@ namespace Squiggle.Model
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
+                if (this.ShowBranding != null)
+                    hash = hash * 59 + this.ShowBranding.GetHashCode();
                 if (this.WebhookUrl != null)
                     hash = hash * 59 + this.WebhookUrl.GetHashCode();
                 if (this.Email != null)
