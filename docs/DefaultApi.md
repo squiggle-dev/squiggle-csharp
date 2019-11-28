@@ -201,6 +201,11 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: jwt
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi();
             var data = new ModelClient(); // ModelClient | 
 
@@ -229,7 +234,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[jwt](../README.md#jwt)
 
 ### HTTP request headers
 
